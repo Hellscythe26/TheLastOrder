@@ -5,60 +5,6 @@ TextureImporter:
   - first:
       213: -3591475534189650280
     second: Campfire_0
-  - first:
-      213: -4704261264892754323
-    second: Campfire_1
-  - first:
-      213: -324634693526516157
-    second: Campfire_2
-  - first:
-      213: 7039333144802297169
-    second: Campfire_3
-  - first:
-      213: -4304248787414823906
-    second: Campfire_4
-  - first:
-      213: -1778526069974996526
-    second: Campfire_5
-  - first:
-      213: -4089948370776621432
-    second: Campfire_6
-  - first:
-      213: -9127053622863060257
-    second: Campfire_7
-  - first:
-      213: -1921332755387622409
-    second: Campfire_8
-  - first:
-      213: -3826206257214174854
-    second: Campfire_9
-  - first:
-      213: -517187517286226971
-    second: Campfire_10
-  - first:
-      213: -6165765267896630334
-    second: Campfire_11
-  - first:
-      213: -1696737509651910853
-    second: Campfire_12
-  - first:
-      213: 5551182389484113002
-    second: Campfire_13
-  - first:
-      213: -6399111860805771263
-    second: Campfire_14
-  - first:
-      213: 3867115255992687118
-    second: Campfire_15
-  - first:
-      213: -8446738896745313771
-    second: Campfire_16
-  - first:
-      213: 906997729026417973
-    second: Campfire_17
-  - first:
-      213: -1604704589916010943
-    second: Campfire_18
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -91,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -170,10 +116,10 @@ TextureImporter:
       name: Campfire_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 808
-        width: 155
-        height: 175
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +138,20 @@ TextureImporter:
       name: Campfire_1
       rect:
         serializedVersion: 2
-        x: 304
-        y: 808
-        width: 155
-        height: 169
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d660077cd4b17beb0800000000000000
-      internalID: -4704261264892754323
+      spriteID: 26077aaa9c964484c94038c48b246fa4
+      internalID: -280508873
       vertices: []
       indices: 
       edges: []
@@ -214,20 +160,20 @@ TextureImporter:
       name: Campfire_2
       rect:
         serializedVersion: 2
-        x: 333
-        y: 954
-        width: 25
-        height: 26
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 34e859a577aae7bf0800000000000000
-      internalID: -324634693526516157
+      spriteID: d7d1eff18d69d3a4fb0686fe2bd1dc78
+      internalID: 924293944
       vertices: []
       indices: 
       edges: []
@@ -236,350 +182,20 @@ TextureImporter:
       name: Campfire_3
       rect:
         serializedVersion: 2
-        x: 554
-        y: 808
-        width: 156
-        height: 171
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 155039ff23cb0b160800000000000000
-      internalID: 7039333144802297169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_4
-      rect:
-        serializedVersion: 2
-        x: 809
-        y: 808
-        width: 152
-        height: 164
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1ccb31688c3444c0800000000000000
-      internalID: -4304248787414823906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_5
-      rect:
-        serializedVersion: 2
-        x: 847
-        y: 958
-        width: 27
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2d96e5f56f76157e0800000000000000
-      internalID: -1778526069974996526
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_6
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 578
-        width: 155
-        height: 176
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88efb2250a59d37c0800000000000000
-      internalID: -4089948370776621432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_7
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 578
-        width: 156
-        height: 176
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd22e435611365180800000000000000
-      internalID: -9127053622863060257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_8
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 578
-        width: 155
-        height: 176
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7fb5cc3e90e0655e0800000000000000
-      internalID: -1921332755387622409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_9
-      rect:
-        serializedVersion: 2
-        x: 809
-        y: 578
-        width: 152
-        height: 171
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a794f516ea596eac0800000000000000
-      internalID: -3826206257214174854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_10
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 346
-        width: 155
-        height: 188
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5e363e571b492d8f0800000000000000
-      internalID: -517187517286226971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_11
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 346
-        width: 155
-        height: 163
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c3849e082dce6aa0800000000000000
-      internalID: -6165765267896630334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_12
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 493
-        width: 28
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b3fed14893af378e0800000000000000
-      internalID: -1696737509651910853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_13
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 346
-        width: 155
-        height: 177
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a6cca98c8f2c90d40800000000000000
-      internalID: 5551182389484113002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_14
-      rect:
-        serializedVersion: 2
-        x: 807
-        y: 346
-        width: 154
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 100eea2aaa9c137a0800000000000000
-      internalID: -6399111860805771263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_15
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 118
-        width: 154
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0a10f226d0caa530800000000000000
-      internalID: 3867115255992687118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_16
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 118
-        width: 153
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51a4505e9b727ca80800000000000000
-      internalID: -8446738896745313771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_17
-      rect:
-        serializedVersion: 2
-        x: 556
-        y: 118
-        width: 154
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 535a4ba01ad469c00800000000000000
-      internalID: 906997729026417973
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Campfire_18
-      rect:
-        serializedVersion: 2
-        x: 809
-        y: 118
-        width: 152
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1460e947da1fab9e0800000000000000
-      internalID: -1604704589916010943
+      spriteID: 71cd6ee62fc091944a784854c22fc4a9
+      internalID: -672627327
       vertices: []
       indices: 
       edges: []
@@ -588,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d62477987e37d2341acc4d7987edfeac
     internalID: 0
     vertices: []
     indices: 
@@ -597,7 +213,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Campfire_0: -3591475534189650280
+      Campfire_1: -280508873
+      Campfire_2: 924293944
+      Campfire_3: -672627327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
