@@ -1,0 +1,2522 @@
+fileFormatVersion: 2
+guid: 363b7a74f42c1514797fc3c74f1f60be
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4545664633482597414
+    second: Sprite Sheet Guard_0
+  - first:
+      213: -3738410687793292340
+    second: Sprite Sheet Guard_1
+  - first:
+      213: -5990497240514060569
+    second: Sprite Sheet Guard_2
+  - first:
+      213: 3600737542457851204
+    second: Sprite Sheet Guard_3
+  - first:
+      213: 9208902286355155318
+    second: Sprite Sheet Guard_4
+  - first:
+      213: 18741748131808423
+    second: Sprite Sheet Guard_5
+  - first:
+      213: -4013423506293488667
+    second: Sprite Sheet Guard_6
+  - first:
+      213: -8837399804032629175
+    second: Sprite Sheet Guard_7
+  - first:
+      213: -6059243579781596849
+    second: Sprite Sheet Guard_8
+  - first:
+      213: 2475622279998800198
+    second: Sprite Sheet Guard_9
+  - first:
+      213: -1379684882437721194
+    second: Sprite Sheet Guard_10
+  - first:
+      213: -2418314327649845525
+    second: Sprite Sheet Guard_11
+  - first:
+      213: 3710686755769398418
+    second: Sprite Sheet Guard_12
+  - first:
+      213: -3358607489605132407
+    second: Sprite Sheet Guard_13
+  - first:
+      213: 5776342043954050806
+    second: Sprite Sheet Guard_14
+  - first:
+      213: 8737212894294318893
+    second: Sprite Sheet Guard_15
+  - first:
+      213: -7125815991102680932
+    second: Sprite Sheet Guard_16
+  - first:
+      213: -7176200447954030651
+    second: Sprite Sheet Guard_17
+  - first:
+      213: 7213321969669408514
+    second: Sprite Sheet Guard_18
+  - first:
+      213: 7989070360280077067
+    second: Sprite Sheet Guard_19
+  - first:
+      213: 3095771279529560250
+    second: Sprite Sheet Guard_20
+  - first:
+      213: 5569797537881662710
+    second: Sprite Sheet Guard_21
+  - first:
+      213: -5108295819301575979
+    second: Sprite Sheet Guard_22
+  - first:
+      213: -2141970800509096360
+    second: Sprite Sheet Guard_23
+  - first:
+      213: -2849183615256813213
+    second: Sprite Sheet Guard_24
+  - first:
+      213: 8495904411935979776
+    second: Sprite Sheet Guard_25
+  - first:
+      213: -1118930411397144294
+    second: Sprite Sheet Guard_26
+  - first:
+      213: -3421121784714684124
+    second: Sprite Sheet Guard_27
+  - first:
+      213: 268708163693709674
+    second: Sprite Sheet Guard_28
+  - first:
+      213: -5682396825142069282
+    second: Sprite Sheet Guard_29
+  - first:
+      213: 9120891933771659510
+    second: Sprite Sheet Guard_30
+  - first:
+      213: -1057146982170450131
+    second: Sprite Sheet Guard_31
+  - first:
+      213: 77095137712180279
+    second: Sprite Sheet Guard_32
+  - first:
+      213: 7584194879541580280
+    second: Sprite Sheet Guard_33
+  - first:
+      213: -1314712830642756881
+    second: Sprite Sheet Guard_34
+  - first:
+      213: 8325762688424384719
+    second: Sprite Sheet Guard_35
+  - first:
+      213: 1874624834248700917
+    second: Sprite Sheet Guard_36
+  - first:
+      213: 3236176343210900332
+    second: Sprite Sheet Guard_37
+  - first:
+      213: 2849174172431506420
+    second: Sprite Sheet Guard_38
+  - first:
+      213: -986459092697780349
+    second: Sprite Sheet Guard_39
+  - first:
+      213: 7820195311685354764
+    second: Sprite Sheet Guard_40
+  - first:
+      213: 4160690816025306976
+    second: Sprite Sheet Guard_41
+  - first:
+      213: 5420692044250562189
+    second: Sprite Sheet Guard_42
+  - first:
+      213: -4858604971689316583
+    second: Sprite Sheet Guard_43
+  - first:
+      213: 8069141231079766446
+    second: Sprite Sheet Guard_44
+  - first:
+      213: 7962445373001069867
+    second: Sprite Sheet Guard_45
+  - first:
+      213: 5356479340807353609
+    second: Sprite Sheet Guard_46
+  - first:
+      213: -5956079543965881292
+    second: Sprite Sheet Guard_47
+  - first:
+      213: 4631986797747338998
+    second: Sprite Sheet Guard_48
+  - first:
+      213: 7311490874633748767
+    second: Sprite Sheet Guard_49
+  - first:
+      213: 1538136428540636055
+    second: Sprite Sheet Guard_50
+  - first:
+      213: 3029436302047326065
+    second: Sprite Sheet Guard_51
+  - first:
+      213: 8856389554649403185
+    second: Sprite Sheet Guard_52
+  - first:
+      213: -3696061623949621676
+    second: Sprite Sheet Guard_53
+  - first:
+      213: 6375874945939063802
+    second: Sprite Sheet Guard_54
+  - first:
+      213: -4980051595298512568
+    second: Sprite Sheet Guard_55
+  - first:
+      213: -921825517682551415
+    second: Sprite Sheet Guard_56
+  - first:
+      213: 3855386738289109842
+    second: Sprite Sheet Guard_57
+  - first:
+      213: -5752148070014348095
+    second: Sprite Sheet Guard_58
+  - first:
+      213: -5550623075179747082
+    second: Sprite Sheet Guard_59
+  - first:
+      213: 7275013105152083909
+    second: Sprite Sheet Guard_60
+  - first:
+      213: 2342044254325637001
+    second: Sprite Sheet Guard_61
+  - first:
+      213: 4186698617725608666
+    second: Sprite Sheet Guard_62
+  - first:
+      213: 155023268255782068
+    second: Sprite Sheet Guard_63
+  - first:
+      213: 4353452687693211660
+    second: Sprite Sheet Guard_64
+  - first:
+      213: 7011806704345105723
+    second: Sprite Sheet Guard_65
+  - first:
+      213: 4214749360197590604
+    second: Sprite Sheet Guard_66
+  - first:
+      213: 8138638952233770166
+    second: Sprite Sheet Guard_67
+  - first:
+      213: 3237189681706237517
+    second: Sprite Sheet Guard_68
+  - first:
+      213: 1978019659059693778
+    second: Sprite Sheet Guard_69
+  - first:
+      213: 3627699964143337723
+    second: Sprite Sheet Guard_70
+  - first:
+      213: -2921825486611091851
+    second: Sprite Sheet Guard_71
+  - first:
+      213: 4458199138891941068
+    second: Sprite Sheet Guard_72
+  - first:
+      213: -6719168146487724990
+    second: Sprite Sheet Guard_73
+  - first:
+      213: 1170532085413419248
+    second: Sprite Sheet Guard_74
+  - first:
+      213: 6493918157205772234
+    second: Sprite Sheet Guard_75
+  - first:
+      213: -7497745849505468599
+    second: Sprite Sheet Guard_76
+  - first:
+      213: -6288265546319994410
+    second: Sprite Sheet Guard_77
+  - first:
+      213: 122272093781642815
+    second: Sprite Sheet Guard_78
+  - first:
+      213: -3164233384499743057
+    second: Sprite Sheet Guard_79
+  - first:
+      213: 7695407954742665549
+    second: Sprite Sheet Guard_80
+  - first:
+      213: -3158286647149581166
+    second: Sprite Sheet Guard_81
+  - first:
+      213: -4253630941416608433
+    second: Sprite Sheet Guard_82
+  - first:
+      213: 6435519133158814093
+    second: Sprite Sheet Guard_83
+  - first:
+      213: -7283154435258321993
+    second: Sprite Sheet Guard_84
+  - first:
+      213: -6295477169880102684
+    second: Sprite Sheet Guard_85
+  - first:
+      213: 3835495240413043065
+    second: Sprite Sheet Guard_86
+  - first:
+      213: -777622149001897444
+    second: Sprite Sheet Guard_87
+  - first:
+      213: 3752077899879685213
+    second: Sprite Sheet Guard_88
+  - first:
+      213: 1898494323352596136
+    second: Sprite Sheet Guard_89
+  - first:
+      213: -1194595056843534987
+    second: Sprite Sheet Guard_90
+  - first:
+      213: 7444905398831109597
+    second: Sprite Sheet Guard_91
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 38
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1245
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adba63d891e8ae0c0800000000000000
+      internalID: -4545664633482597414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1245
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb9e81594f7e1cc0800000000000000
+      internalID: -3738410687793292340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_2
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1245
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ee933faf7a7ddca0800000000000000
+      internalID: -5990497240514060569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_3
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1245
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44dfc93a7b368f130800000000000000
+      internalID: 3600737542457851204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_4
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1243
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6794b7da6d79ccf70800000000000000
+      internalID: 9208902286355155318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_5
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 1243
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a4cdd74585924000800000000000000
+      internalID: 18741748131808423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_6
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 1243
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e38c26c5947d48c0800000000000000
+      internalID: -4013423506293488667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_7
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1243
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946478663bf3b5580800000000000000
+      internalID: -8837399804032629175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_8
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 1243
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f493d83411e39eba0800000000000000
+      internalID: -6059243579781596849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1153
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6410f55e85d2b5220800000000000000
+      internalID: 2475622279998800198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_10
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1153
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693b258c8ef5adce0800000000000000
+      internalID: -1379684882437721194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_11
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 1153
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee71398eeb607ed0800000000000000
+      internalID: -2418314327649845525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_12
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1153
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294b16eb1f10f7330800000000000000
+      internalID: 3710686755769398418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 1151
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f9e1a6844d361d0800000000000000
+      internalID: -3358607489605132407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_14
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1151
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f6f80f0c70b92050800000000000000
+      internalID: 5776342043954050806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_15
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 1152
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f106be5d0d04970800000000000000
+      internalID: 8737212894294318893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_16
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1153
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c90d68b3c140c1d90800000000000000
+      internalID: -7125815991102680932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_17
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1154
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf63b6b6b3096c90800000000000000
+      internalID: -7176200447954030651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_18
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1063
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2078aa41d1eda1460800000000000000
+      internalID: 7213321969669408514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_19
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1063
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b03981e2a21eede60800000000000000
+      internalID: 7989070360280077067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_20
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1063
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab8473e939366fa20800000000000000
+      internalID: 3095771279529560250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_21
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1063
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f42844c955eb4d40800000000000000
+      internalID: 5569797537881662710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_22
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1061
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2aaea6400bb19b0800000000000000
+      internalID: -5108295819301575979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_23
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1060
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e6564d7e03642e0800000000000000
+      internalID: -2141970800509096360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_24
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1061
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36121c8f89aa578d0800000000000000
+      internalID: -2849183615256813213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_25
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1063
+        width: 57
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0093e17ac0487e570800000000000000
+      internalID: 8495904411935979776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_26
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 1064
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a11aa4c18b2c870f0800000000000000
+      internalID: -1118930411397144294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_27
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 967
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4291bb8dcdbb580d0800000000000000
+      internalID: -3421121784714684124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_28
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 967
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a690635b6a4aab300800000000000000
+      internalID: 268708163693709674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_29
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 967
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed77994b1321421b0800000000000000
+      internalID: -5682396825142069282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_30
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 967
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f87f23a3eae39e70800000000000000
+      internalID: 9120891933771659510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_31
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 965
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27aa54bb624451f0800000000000000
+      internalID: -1057146982170450131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_32
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 965
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c8e398e95e11100800000000000000
+      internalID: 77095137712180279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_33
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 963
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f199666f09704960800000000000000
+      internalID: 7584194879541580280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_34
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 962
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2e3eb65a331cde0800000000000000
+      internalID: -1314712830642756881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_35
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 963
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc89cb7ad0d0b8370800000000000000
+      internalID: 8325762688424384719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_36
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 861
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3f484ca51040a10800000000000000
+      internalID: 1874624834248700917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_37
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 864
+        width: 57
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6bbb97fc3539ec20800000000000000
+      internalID: 3236176343210900332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_38
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 864
+        width: 59
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb5ff270dc4a8720800000000000000
+      internalID: 2849174172431506420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_39
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 863
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f6b428ea46f42f0800000000000000
+      internalID: -986459092697780349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_40
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 864
+        width: 63
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c054e2be33ae68c60800000000000000
+      internalID: 7820195311685354764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_41
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 866
+        width: 82
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0672b6db04ebdb930800000000000000
+      internalID: 4160690816025306976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_42
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 754
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e3756b1ba2a3b40800000000000000
+      internalID: 5420692044250562189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_43
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 757
+        width: 31
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fe28e2584c29cb0800000000000000
+      internalID: -4858604971689316583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 757
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9b7f092395bff60800000000000000
+      internalID: 8069141231079766446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_45
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 756
+        width: 71
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b257e2141e9408e60800000000000000
+      internalID: 7962445373001069867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_46
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 757
+        width: 71
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9057a83a499065a40800000000000000
+      internalID: 5356479340807353609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_47
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 759
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c61ff1631c75da0800000000000000
+      internalID: -5956079543965881292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_48
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 633
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe7704837f184040800000000000000
+      internalID: 4631986797747338998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_49
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 636
+        width: 58
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f110e096632a77560800000000000000
+      internalID: 7311490874633748767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_50
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 636
+        width: 60
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ba04faeee885510800000000000000
+      internalID: 1538136428540636055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_51
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 635
+        width: 67
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f243d1448ba0a20800000000000000
+      internalID: 3029436302047326065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_52
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 615
+        width: 87
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f8b55706738ea70800000000000000
+      internalID: 8856389554649403185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_53
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 618
+        width: 79
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456878c1983f4bcc0800000000000000
+      internalID: -3696061623949621676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_54
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 517
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af3c2058b78ab7850800000000000000
+      internalID: 6375874945939063802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_55
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 520
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8416d13a57d43eab0800000000000000
+      internalID: -4980051595298512568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_56
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 520
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98514a163940533f0800000000000000
+      internalID: -921825517682551415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_57
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 519
+        width: 71
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b697fcfc5118530800000000000000
+      internalID: 3855386738289109842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_58
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 520
+        width: 71
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c498577ec34c20b0800000000000000
+      internalID: -5752148070014348095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_59
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 522
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f823d9b8b938f2b0800000000000000
+      internalID: -5550623075179747082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_60
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 395
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7c6ecdfd906f460800000000000000
+      internalID: 7275013105152083909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_61
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 398
+        width: 57
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ff25337dc908020800000000000000
+      internalID: 2342044254325637001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_62
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 398
+        width: 45
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad26723f5342a1a30800000000000000
+      internalID: 4186698617725608666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_63
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 397
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b45e4457d0c62200800000000000000
+      internalID: 155023268255782068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_64
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 398
+        width: 30
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c086c6467229a6c30800000000000000
+      internalID: 4353452687693211660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_65
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 400
+        width: 30
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3541362c01fe4160800000000000000
+      internalID: 7011806704345105723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_66
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 400
+        width: 30
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4ed1ef563ccd7a30800000000000000
+      internalID: 4214749360197590604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_67
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 396
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc1d07b10142f070800000000000000
+      internalID: 8138638952233770166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_68
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 276
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ef8a83ddeccec20800000000000000
+      internalID: 3237189681706237517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_69
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 279
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d80ef06666537b10800000000000000
+      internalID: 1978019659059693778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_70
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 279
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf00672a5ed285230800000000000000
+      internalID: 3627699964143337723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_71
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 278
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57eecde43379377d0800000000000000
+      internalID: -2921825486611091851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_72
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 279
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc44b9b0f74bedd30800000000000000
+      internalID: 4458199138891941068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_73
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 281
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244ba72ab28b0c2a0800000000000000
+      internalID: -6719168146487724990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_74
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 281
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f8934ddab09e3010800000000000000
+      internalID: 1170532085413419248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_75
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 277
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac795b068280f1a50800000000000000
+      internalID: 6493918157205772234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_76
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 149
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f2118efd7a2f790800000000000000
+      internalID: -7497745849505468599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_77
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 152
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1e4426dc79bb8a0800000000000000
+      internalID: -6288265546319994410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_78
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 150
+        width: 45
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e4ccb42d562b100800000000000000
+      internalID: 122272093781642815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_79
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 147
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6f57a60826614d0800000000000000
+      internalID: -3164233384499743057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_80
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 145
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41e62843c49bca60800000000000000
+      internalID: 7695407954742665549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_81
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 142
+        width: 31
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c2ac917038b24d0800000000000000
+      internalID: -3158286647149581166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_82
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 147
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4da04b023118f4c0800000000000000
+      internalID: -4253630941416608433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_83
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 146
+        width: 30
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8139250e8e8f4950800000000000000
+      internalID: 6435519133158814093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_84
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 30
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b3fd1201a90dea90800000000000000
+      internalID: -7283154435258321993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_85
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 33
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e807bd6ed8f1a8a0800000000000000
+      internalID: -6295477169880102684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_86
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 33
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 979558e899a6a3530800000000000000
+      internalID: 3835495240413043065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_87
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 32
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a144786c45535f0800000000000000
+      internalID: -777622149001897444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_88
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 33
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c1ce778fe021430800000000000000
+      internalID: 3752077899879685213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_89
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 35
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aee687478ec85a10800000000000000
+      internalID: 1898494323352596136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_90
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 35
+        width: 60
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d47620022fb6fe0800000000000000
+      internalID: -1194595056843534987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Guard_91
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 31
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd557b3f30e915760800000000000000
+      internalID: 7444905398831109597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sprite Sheet Guard_0: -4545664633482597414
+      Sprite Sheet Guard_1: -3738410687793292340
+      Sprite Sheet Guard_10: -1379684882437721194
+      Sprite Sheet Guard_11: -2418314327649845525
+      Sprite Sheet Guard_12: 3710686755769398418
+      Sprite Sheet Guard_13: -3358607489605132407
+      Sprite Sheet Guard_14: 5776342043954050806
+      Sprite Sheet Guard_15: 8737212894294318893
+      Sprite Sheet Guard_16: -7125815991102680932
+      Sprite Sheet Guard_17: -7176200447954030651
+      Sprite Sheet Guard_18: 7213321969669408514
+      Sprite Sheet Guard_19: 7989070360280077067
+      Sprite Sheet Guard_2: -5990497240514060569
+      Sprite Sheet Guard_20: 3095771279529560250
+      Sprite Sheet Guard_21: 5569797537881662710
+      Sprite Sheet Guard_22: -5108295819301575979
+      Sprite Sheet Guard_23: -2141970800509096360
+      Sprite Sheet Guard_24: -2849183615256813213
+      Sprite Sheet Guard_25: 8495904411935979776
+      Sprite Sheet Guard_26: -1118930411397144294
+      Sprite Sheet Guard_27: -3421121784714684124
+      Sprite Sheet Guard_28: 268708163693709674
+      Sprite Sheet Guard_29: -5682396825142069282
+      Sprite Sheet Guard_3: 3600737542457851204
+      Sprite Sheet Guard_30: 9120891933771659510
+      Sprite Sheet Guard_31: -1057146982170450131
+      Sprite Sheet Guard_32: 77095137712180279
+      Sprite Sheet Guard_33: 7584194879541580280
+      Sprite Sheet Guard_34: -1314712830642756881
+      Sprite Sheet Guard_35: 8325762688424384719
+      Sprite Sheet Guard_36: 1874624834248700917
+      Sprite Sheet Guard_37: 3236176343210900332
+      Sprite Sheet Guard_38: 2849174172431506420
+      Sprite Sheet Guard_39: -986459092697780349
+      Sprite Sheet Guard_4: 9208902286355155318
+      Sprite Sheet Guard_40: 7820195311685354764
+      Sprite Sheet Guard_41: 4160690816025306976
+      Sprite Sheet Guard_42: 5420692044250562189
+      Sprite Sheet Guard_43: -4858604971689316583
+      Sprite Sheet Guard_44: 8069141231079766446
+      Sprite Sheet Guard_45: 7962445373001069867
+      Sprite Sheet Guard_46: 5356479340807353609
+      Sprite Sheet Guard_47: -5956079543965881292
+      Sprite Sheet Guard_48: 4631986797747338998
+      Sprite Sheet Guard_49: 7311490874633748767
+      Sprite Sheet Guard_5: 18741748131808423
+      Sprite Sheet Guard_50: 1538136428540636055
+      Sprite Sheet Guard_51: 3029436302047326065
+      Sprite Sheet Guard_52: 8856389554649403185
+      Sprite Sheet Guard_53: -3696061623949621676
+      Sprite Sheet Guard_54: 6375874945939063802
+      Sprite Sheet Guard_55: -4980051595298512568
+      Sprite Sheet Guard_56: -921825517682551415
+      Sprite Sheet Guard_57: 3855386738289109842
+      Sprite Sheet Guard_58: -5752148070014348095
+      Sprite Sheet Guard_59: -5550623075179747082
+      Sprite Sheet Guard_6: -4013423506293488667
+      Sprite Sheet Guard_60: 7275013105152083909
+      Sprite Sheet Guard_61: 2342044254325637001
+      Sprite Sheet Guard_62: 4186698617725608666
+      Sprite Sheet Guard_63: 155023268255782068
+      Sprite Sheet Guard_64: 4353452687693211660
+      Sprite Sheet Guard_65: 7011806704345105723
+      Sprite Sheet Guard_66: 4214749360197590604
+      Sprite Sheet Guard_67: 8138638952233770166
+      Sprite Sheet Guard_68: 3237189681706237517
+      Sprite Sheet Guard_69: 1978019659059693778
+      Sprite Sheet Guard_7: -8837399804032629175
+      Sprite Sheet Guard_70: 3627699964143337723
+      Sprite Sheet Guard_71: -2921825486611091851
+      Sprite Sheet Guard_72: 4458199138891941068
+      Sprite Sheet Guard_73: -6719168146487724990
+      Sprite Sheet Guard_74: 1170532085413419248
+      Sprite Sheet Guard_75: 6493918157205772234
+      Sprite Sheet Guard_76: -7497745849505468599
+      Sprite Sheet Guard_77: -6288265546319994410
+      Sprite Sheet Guard_78: 122272093781642815
+      Sprite Sheet Guard_79: -3164233384499743057
+      Sprite Sheet Guard_8: -6059243579781596849
+      Sprite Sheet Guard_80: 7695407954742665549
+      Sprite Sheet Guard_81: -3158286647149581166
+      Sprite Sheet Guard_82: -4253630941416608433
+      Sprite Sheet Guard_83: 6435519133158814093
+      Sprite Sheet Guard_84: -7283154435258321993
+      Sprite Sheet Guard_85: -6295477169880102684
+      Sprite Sheet Guard_86: 3835495240413043065
+      Sprite Sheet Guard_87: -777622149001897444
+      Sprite Sheet Guard_88: 3752077899879685213
+      Sprite Sheet Guard_89: 1898494323352596136
+      Sprite Sheet Guard_9: 2475622279998800198
+      Sprite Sheet Guard_90: -1194595056843534987
+      Sprite Sheet Guard_91: 7444905398831109597
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,17 @@
+/[Ll]ibrary/
+/[Tt]emp/
+/[O]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+/Packages/manifest.lock
+/UserSettings/
+/*.csproj
+/*.sln
+/*.userprefs
+/*.pidb
+/*.svd
+/*.suo
+/*.user
+/*.booproj
+/ProjectSettings/ProjectSettings.asset.lock

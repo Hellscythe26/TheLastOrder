@@ -1,0 +1,2158 @@
+fileFormatVersion: 2
+guid: 02251897581e5bb43ace2343da4d0d14
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8877945264917949665
+    second: Sprite Sheet Kai_0
+  - first:
+      213: -661976105575459479
+    second: Sprite Sheet Kai_1
+  - first:
+      213: -8002969323128177711
+    second: Sprite Sheet Kai_2
+  - first:
+      213: 460070954708369162
+    second: Sprite Sheet Kai_3
+  - first:
+      213: -1507633835117038936
+    second: Sprite Sheet Kai_4
+  - first:
+      213: 8758835006637753289
+    second: Sprite Sheet Kai_5
+  - first:
+      213: 5789345891233471786
+    second: Sprite Sheet Kai_6
+  - first:
+      213: -3466316383891245997
+    second: Sprite Sheet Kai_7
+  - first:
+      213: 4274737932961153277
+    second: Sprite Sheet Kai_8
+  - first:
+      213: 7717501201455719246
+    second: Sprite Sheet Kai_9
+  - first:
+      213: 968900208980888256
+    second: Sprite Sheet Kai_10
+  - first:
+      213: -1700768502567260268
+    second: Sprite Sheet Kai_11
+  - first:
+      213: 468076991726627938
+    second: Sprite Sheet Kai_12
+  - first:
+      213: -1781799106068501400
+    second: Sprite Sheet Kai_13
+  - first:
+      213: 4397327343224719056
+    second: Sprite Sheet Kai_14
+  - first:
+      213: 4542904385748709118
+    second: Sprite Sheet Kai_15
+  - first:
+      213: -6362784512706823101
+    second: Sprite Sheet Kai_16
+  - first:
+      213: 2313628164415326808
+    second: Sprite Sheet Kai_17
+  - first:
+      213: -7275531250995698523
+    second: Sprite Sheet Kai_18
+  - first:
+      213: -5641754256997736176
+    second: Sprite Sheet Kai_19
+  - first:
+      213: 6118467746693545802
+    second: Sprite Sheet Kai_20
+  - first:
+      213: 989436999552704570
+    second: Sprite Sheet Kai_21
+  - first:
+      213: -320481052988684927
+    second: Sprite Sheet Kai_22
+  - first:
+      213: -3494604581440604707
+    second: Sprite Sheet Kai_23
+  - first:
+      213: -5861092874890280390
+    second: Sprite Sheet Kai_24
+  - first:
+      213: 2224899647356179522
+    second: Sprite Sheet Kai_25
+  - first:
+      213: 580811048468711280
+    second: Sprite Sheet Kai_26
+  - first:
+      213: 169824983499457914
+    second: Sprite Sheet Kai_27
+  - first:
+      213: -4463591197674290082
+    second: Sprite Sheet Kai_28
+  - first:
+      213: -105445347974391291
+    second: Sprite Sheet Kai_29
+  - first:
+      213: 771754847660520383
+    second: Sprite Sheet Kai_30
+  - first:
+      213: 8803403043685134468
+    second: Sprite Sheet Kai_31
+  - first:
+      213: -4559884251573085650
+    second: Sprite Sheet Kai_32
+  - first:
+      213: -769320890331359577
+    second: Sprite Sheet Kai_33
+  - first:
+      213: 3068015809093083982
+    second: Sprite Sheet Kai_34
+  - first:
+      213: -4343739778946693763
+    second: Sprite Sheet Kai_35
+  - first:
+      213: 7808067309958511321
+    second: Sprite Sheet Kai_36
+  - first:
+      213: -4029843915122237236
+    second: Sprite Sheet Kai_37
+  - first:
+      213: 3137986658865296740
+    second: Sprite Sheet Kai_38
+  - first:
+      213: -469443218910498136
+    second: Sprite Sheet Kai_39
+  - first:
+      213: 8570558024991148349
+    second: Sprite Sheet Kai_40
+  - first:
+      213: 3494563837301319247
+    second: Sprite Sheet Kai_41
+  - first:
+      213: -6762281244151392030
+    second: Sprite Sheet Kai_42
+  - first:
+      213: -6344770787907757422
+    second: Sprite Sheet Kai_43
+  - first:
+      213: 3056458825269800749
+    second: Sprite Sheet Kai_44
+  - first:
+      213: -8936997563884746211
+    second: Sprite Sheet Kai_45
+  - first:
+      213: 3480484047975230931
+    second: Sprite Sheet Kai_46
+  - first:
+      213: -5388411089184759780
+    second: Sprite Sheet Kai_47
+  - first:
+      213: 6846838797062360576
+    second: Sprite Sheet Kai_48
+  - first:
+      213: 481927077261283680
+    second: Sprite Sheet Kai_49
+  - first:
+      213: -1373905259939007255
+    second: Sprite Sheet Kai_50
+  - first:
+      213: -2272515597607692427
+    second: Sprite Sheet Kai_51
+  - first:
+      213: 1862604021695757082
+    second: Sprite Sheet Kai_52
+  - first:
+      213: -384836358823863777
+    second: Sprite Sheet Kai_53
+  - first:
+      213: 340781331531248330
+    second: Sprite Sheet Kai_54
+  - first:
+      213: 3335151592658658650
+    second: Sprite Sheet Kai_55
+  - first:
+      213: 9193627933693168097
+    second: Sprite Sheet Kai_56
+  - first:
+      213: 3243595071321225390
+    second: Sprite Sheet Kai_57
+  - first:
+      213: -3518617240571114833
+    second: Sprite Sheet Kai_58
+  - first:
+      213: -6131106215641338147
+    second: Sprite Sheet Kai_59
+  - first:
+      213: -8367122650478627116
+    second: Sprite Sheet Kai_60
+  - first:
+      213: 4973485730189767471
+    second: Sprite Sheet Kai_61
+  - first:
+      213: -362224030800578216
+    second: Sprite Sheet Kai_62
+  - first:
+      213: 2744934758790961882
+    second: Sprite Sheet Kai_63
+  - first:
+      213: 8750550046104955946
+    second: Sprite Sheet Kai_64
+  - first:
+      213: 1492473957535287532
+    second: Sprite Sheet Kai_65
+  - first:
+      213: -7175040062380346105
+    second: Sprite Sheet Kai_66
+  - first:
+      213: -9159135792828663724
+    second: Sprite Sheet Kai_67
+  - first:
+      213: 3021636138769963097
+    second: Sprite Sheet Kai_68
+  - first:
+      213: -8039442141048151058
+    second: Sprite Sheet Kai_69
+  - first:
+      213: 2895301051753720895
+    second: Sprite Sheet Kai_70
+  - first:
+      213: -1637055954972257209
+    second: Sprite Sheet Kai_71
+  - first:
+      213: -5427831035733804820
+    second: Sprite Sheet Kai_72
+  - first:
+      213: -6268633801590081755
+    second: Sprite Sheet Kai_73
+  - first:
+      213: 8938031324070437239
+    second: Sprite Sheet Kai_74
+  - first:
+      213: -4290915456755286096
+    second: Sprite Sheet Kai_75
+  - first:
+      213: -8405606401781594870
+    second: Sprite Sheet Kai_76
+  - first:
+      213: -7284822369387826298
+    second: Sprite Sheet Kai_77
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 362
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f135435a1d33bc480800000000000000
+      internalID: -8877945264917949665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 361
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965d0614d3030d6f0800000000000000
+      internalID: -661976105575459479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_2
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 361
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbb89a5dcdbfe090800000000000000
+      internalID: -8002969323128177711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 361
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0ffdd28810826600800000000000000
+      internalID: 460070954708369162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_4
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 361
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a23d76c30fc31be0800000000000000
+      internalID: -1507633835117038936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 361
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c346e04802ad8970800000000000000
+      internalID: 8758835006637753289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 361
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d96d03a63e75050800000000000000
+      internalID: 5789345891233471786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 361
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 354bb0b3d9b25efc0800000000000000
+      internalID: -3466316383891245997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 323
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df08902608be25b30800000000000000
+      internalID: 4274737932961153277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_9
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 325
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e432b6224721a1b60800000000000000
+      internalID: 7717501201455719246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_10
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 323
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca8b1b4b99327d00800000000000000
+      internalID: 968900208980888256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 323
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f2e47de08a568e0800000000000000
+      internalID: -1700768502567260268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_12
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 323
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c26634b81fe7600800000000000000
+      internalID: 468076991726627938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_13
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 323
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86cada54727c547e0800000000000000
+      internalID: -1781799106068501400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_14
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 325
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6850eabe1760d30800000000000000
+      internalID: 4397327343224719056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_15
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 323
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efead113873ab0f30800000000000000
+      internalID: 4542904385748709118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_16
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 323
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34cb0c97239d2b7a0800000000000000
+      internalID: -6362784512706823101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_17
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 323
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a8052be88ab1020800000000000000
+      internalID: 2313628164415326808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 285
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a4e528efde180b90800000000000000
+      internalID: -7275531250995698523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_19
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 286
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0112a91056674b1b0800000000000000
+      internalID: -5641754256997736176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_20
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 286
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f7a53aff929e450800000000000000
+      internalID: 6118467746693545802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_21
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 285
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30a7f575bf2bbd00800000000000000
+      internalID: 989436999552704570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_22
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 286
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185cd572e2c6d8bf0800000000000000
+      internalID: -320481052988684927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_23
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 285
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5b7ccf5aba08fc0800000000000000
+      internalID: -3494604581440604707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_24
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 285
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32879c651739aea0800000000000000
+      internalID: -5861092874890280390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_25
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 285
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2449e85f07e60ee10800000000000000
+      internalID: 2224899647356179522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_26
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 286
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077899142947f0800800000000000000
+      internalID: 580811048468711280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_27
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 286
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75c8773ce65b5200800000000000000
+      internalID: 169824983499457914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_28
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 250
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54401074732e02c0800000000000000
+      internalID: -4463591197674290082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_29
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 250
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ad4c2c302698ef0800000000000000
+      internalID: -105445347974391291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_30
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 250
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3bd7ce1f2d5ba00800000000000000
+      internalID: 771754847660520383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_31
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 249
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 480f1710d68fb2a70800000000000000
+      internalID: 8803403043685134468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_32
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 250
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2a9618be6908b0c0800000000000000
+      internalID: -4559884251573085650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_33
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 250
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6138de9b2d255f0800000000000000
+      internalID: -769320890331359577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_34
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 250
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43a6429f18c39a20800000000000000
+      internalID: 3068015809093083982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_35
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 250
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7506276fafe7b3c0800000000000000
+      internalID: -4343739778946693763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_36
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 248
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9daba6879d3db5c60800000000000000
+      internalID: 7808067309958511321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_37
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 250
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc0aeda6f4e1318c0800000000000000
+      internalID: -4029843915122237236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_38
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 213
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465b49f8d3e5c8b20800000000000000
+      internalID: 3137986658865296740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_39
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 213
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a2bf9e21e33c79f0800000000000000
+      internalID: -469443218910498136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_40
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 212
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39887e6d1db0f670800000000000000
+      internalID: 8570558024991148349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_41
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 212
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4665478b4f2f7030800000000000000
+      internalID: 3494563837301319247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_42
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 212
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8d11b590d8722a0800000000000000
+      internalID: -6762281244151392030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_43
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 213
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29a9b7d9598d2f7a0800000000000000
+      internalID: -6344770787907757422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_44
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 212
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f60d69b19ba6a20800000000000000
+      internalID: 3056458825269800749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_45
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 213
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a4e1ed01869f380800000000000000
+      internalID: -8936997563884746211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_46
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 213
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd2afd1dc92d4030800000000000000
+      internalID: 3480484047975230931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_47
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 212
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10ed55d9a48835b0800000000000000
+      internalID: -5388411089184759780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_48
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 163
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00ec34d1c9bd40f50800000000000000
+      internalID: 6846838797062360576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_49
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 162
+        width: 21
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0611dc79f1620b600800000000000000
+      internalID: 481927077261283680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_50
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 163
+        width: 20
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e47b420278eeece0800000000000000
+      internalID: -1373905259939007255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_51
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 159
+        width: 20
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5771f02ba176670e0800000000000000
+      internalID: -2272515597607692427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_52
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 161
+        width: 20
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1bb36e3d7c49d910800000000000000
+      internalID: 1862604021695757082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_53
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 129
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a16afde59c8aaf0800000000000000
+      internalID: -384836358823863777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_54
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 129
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac23104c0d2bab400800000000000000
+      internalID: 340781331531248330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_55
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 129
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a556f7004b6d84e20800000000000000
+      internalID: 3335151592658658650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_56
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 129
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9c3e055e3569f70800000000000000
+      internalID: 9193627933693168097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_57
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 129
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea83f453880930d20800000000000000
+      internalID: 3243595071321225390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_58
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 91
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa813b134c5b2fc0800000000000000
+      internalID: -3518617240571114833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_59
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 91
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde2280816fe9eaa0800000000000000
+      internalID: -6131106215641338147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_60
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 91
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d6b812c74202eb80800000000000000
+      internalID: -8367122650478627116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_61
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 91
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f237f63cbee550540800000000000000
+      internalID: 4973485730189767471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_62
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 91
+        width: 36
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8597503c92f19faf0800000000000000
+      internalID: -362224030800578216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_63
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 47
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada9b5dae97f71620800000000000000
+      internalID: 2744934758790961882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_64
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 47
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c2d5f87e2307970800000000000000
+      internalID: 8750550046104955946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_65
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 47
+        width: 21
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8896b282556b410800000000000000
+      internalID: 1492473957535287532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_66
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 47
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7057f9804132d6c90800000000000000
+      internalID: -7175040062380346105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_67
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 46
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 458b1ea068634e080800000000000000
+      internalID: -9159135792828663724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_68
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 6
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 958ddd31f020fe920800000000000000
+      internalID: 3021636138769963097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_69
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 9
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3e48ea7f92e6090800000000000000
+      internalID: -8039442141048151058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_70
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 6
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c689377fc2e2820800000000000000
+      internalID: 2895301051753720895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_71
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 11
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744d07e48420849e0800000000000000
+      internalID: -1637055954972257209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_72
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 12
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8fe3e4e687ca4b0800000000000000
+      internalID: -5427831035733804820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_73
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 7
+        width: 22
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527773525c65109a0800000000000000
+      internalID: -6268633801590081755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_74
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 12
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771688e22244a0c70800000000000000
+      internalID: 8938031324070437239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_75
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 10
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf3ed6502b9374c0800000000000000
+      internalID: -4290915456755286096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_76
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 16
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a050f0c2389495b80800000000000000
+      internalID: -8405606401781594870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Sheet Kai_77
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 17
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683b1d4d6ac17ea90800000000000000
+      internalID: -7284822369387826298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sprite Sheet Kai_0: -8877945264917949665
+      Sprite Sheet Kai_1: -661976105575459479
+      Sprite Sheet Kai_10: 968900208980888256
+      Sprite Sheet Kai_11: -1700768502567260268
+      Sprite Sheet Kai_12: 468076991726627938
+      Sprite Sheet Kai_13: -1781799106068501400
+      Sprite Sheet Kai_14: 4397327343224719056
+      Sprite Sheet Kai_15: 4542904385748709118
+      Sprite Sheet Kai_16: -6362784512706823101
+      Sprite Sheet Kai_17: 2313628164415326808
+      Sprite Sheet Kai_18: -7275531250995698523
+      Sprite Sheet Kai_19: -5641754256997736176
+      Sprite Sheet Kai_2: -8002969323128177711
+      Sprite Sheet Kai_20: 6118467746693545802
+      Sprite Sheet Kai_21: 989436999552704570
+      Sprite Sheet Kai_22: -320481052988684927
+      Sprite Sheet Kai_23: -3494604581440604707
+      Sprite Sheet Kai_24: -5861092874890280390
+      Sprite Sheet Kai_25: 2224899647356179522
+      Sprite Sheet Kai_26: 580811048468711280
+      Sprite Sheet Kai_27: 169824983499457914
+      Sprite Sheet Kai_28: -4463591197674290082
+      Sprite Sheet Kai_29: -105445347974391291
+      Sprite Sheet Kai_3: 460070954708369162
+      Sprite Sheet Kai_30: 771754847660520383
+      Sprite Sheet Kai_31: 8803403043685134468
+      Sprite Sheet Kai_32: -4559884251573085650
+      Sprite Sheet Kai_33: -769320890331359577
+      Sprite Sheet Kai_34: 3068015809093083982
+      Sprite Sheet Kai_35: -4343739778946693763
+      Sprite Sheet Kai_36: 7808067309958511321
+      Sprite Sheet Kai_37: -4029843915122237236
+      Sprite Sheet Kai_38: 3137986658865296740
+      Sprite Sheet Kai_39: -469443218910498136
+      Sprite Sheet Kai_4: -1507633835117038936
+      Sprite Sheet Kai_40: 8570558024991148349
+      Sprite Sheet Kai_41: 3494563837301319247
+      Sprite Sheet Kai_42: -6762281244151392030
+      Sprite Sheet Kai_43: -6344770787907757422
+      Sprite Sheet Kai_44: 3056458825269800749
+      Sprite Sheet Kai_45: -8936997563884746211
+      Sprite Sheet Kai_46: 3480484047975230931
+      Sprite Sheet Kai_47: -5388411089184759780
+      Sprite Sheet Kai_48: 6846838797062360576
+      Sprite Sheet Kai_49: 481927077261283680
+      Sprite Sheet Kai_5: 8758835006637753289
+      Sprite Sheet Kai_50: -1373905259939007255
+      Sprite Sheet Kai_51: -2272515597607692427
+      Sprite Sheet Kai_52: 1862604021695757082
+      Sprite Sheet Kai_53: -384836358823863777
+      Sprite Sheet Kai_54: 340781331531248330
+      Sprite Sheet Kai_55: 3335151592658658650
+      Sprite Sheet Kai_56: 9193627933693168097
+      Sprite Sheet Kai_57: 3243595071321225390
+      Sprite Sheet Kai_58: -3518617240571114833
+      Sprite Sheet Kai_59: -6131106215641338147
+      Sprite Sheet Kai_6: 5789345891233471786
+      Sprite Sheet Kai_60: -8367122650478627116
+      Sprite Sheet Kai_61: 4973485730189767471
+      Sprite Sheet Kai_62: -362224030800578216
+      Sprite Sheet Kai_63: 2744934758790961882
+      Sprite Sheet Kai_64: 8750550046104955946
+      Sprite Sheet Kai_65: 1492473957535287532
+      Sprite Sheet Kai_66: -7175040062380346105
+      Sprite Sheet Kai_67: -9159135792828663724
+      Sprite Sheet Kai_68: 3021636138769963097
+      Sprite Sheet Kai_69: -8039442141048151058
+      Sprite Sheet Kai_7: -3466316383891245997
+      Sprite Sheet Kai_70: 2895301051753720895
+      Sprite Sheet Kai_71: -1637055954972257209
+      Sprite Sheet Kai_72: -5427831035733804820
+      Sprite Sheet Kai_73: -6268633801590081755
+      Sprite Sheet Kai_74: 8938031324070437239
+      Sprite Sheet Kai_75: -4290915456755286096
+      Sprite Sheet Kai_76: -8405606401781594870
+      Sprite Sheet Kai_77: -7284822369387826298
+      Sprite Sheet Kai_8: 4274737932961153277
+      Sprite Sheet Kai_9: 7717501201455719246
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
