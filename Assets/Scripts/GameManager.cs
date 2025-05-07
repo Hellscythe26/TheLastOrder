@@ -1,4 +1,3 @@
-// GameManager.cs
 using UnityEngine;
 using UnityEngine.Events;
 
