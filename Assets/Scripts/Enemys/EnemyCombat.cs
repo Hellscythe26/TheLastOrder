@@ -5,16 +5,14 @@ public class EnemyCombat : MonoBehaviour
 {
     [Header("Stats")]
     [SerializeField] private float attackDamage = 1f;
-    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] public float attackRange = 1.5f; // Público para que EnemyMovement/Agents lo pueda consultar
     [SerializeField] private float attackCooldown = 2f;
 
     [Header("Component References")]
     [SerializeField] private EnemyHealth health;
     [SerializeField] private Animator animator;
 
-    // Ya no necesitamos playerTransform y playerDamageable como variables de clase
     private float lastAttackTime = -Mathf.Infinity;
-    private bool canAttack = true; // Esta se maneja ahora basado en si el jugador existe y está vivo
 
     private const string ATTACK_UP_TRIGGER = "AttackUp";
     private const string ATTACK_DOWN_TRIGGER = "AttackDown";
@@ -23,59 +21,74 @@ public class EnemyCombat : MonoBehaviour
 
     private void Awake()
     {
-        health = GetComponent<EnemyHealth>();
-        animator = GetComponent<Animator>();
-        if (animator == null) Debug.LogWarning("Animator component missing on EnemyCombat obj!", this);
+        if (health == null) health = GetComponent<EnemyHealth>();
+        if (animator == null) animator = GetComponent<Animator>();
 
-        // Ya no buscamos al jugador en Awake aquí
+        if (health == null) Debug.LogError("EnemyHealth component missing on " + gameObject.name + "!", this);
+        if (animator == null) Debug.LogWarning("Animator component missing on " + gameObject.name + "!", this);
     }
 
-    private void Update()
+    // El Update ya no toma decisiones proactivas de ataque.
+    // Se confía en que EnemyMovement llamará a TryPerformAttack.
+    // void Update() { }
+
+
+    /// <summary>
+    /// Intenta realizar un ataque si todas las condiciones se cumplen.
+    /// Este método será llamado por el sistema del Agente (a través de EnemyMovement).
+    /// </summary>
+    public void TryPerformAttack(Transform targetPlayerTransform, IDamageable targetPlayerDamageable)
     {
-        // Obtenemos las referencias al jugador aquí, cada frame que necesitemos atacar.
-        // Esto asegura que siempre tengamos la instancia correcta del jugador persistente.
-        Transform currentPlayerTransform = null;
-        IDamageable currentPlayerDamageable = null;
-
-        if (Player.Instance != null) // Usamos el Singleton Player.Instance
+        // Verificar condiciones de nuevo aquí es una buena práctica como doble chequeo,
+        // especialmente si hay un pequeño delay entre la decisión del agente y la ejecución.
+        if (CanAttackNow(targetPlayerTransform, targetPlayerDamageable))
         {
-            currentPlayerTransform = Player.Instance.transform;
-            currentPlayerDamageable = Player.Instance.GetComponent<IDamageable>(); // PlayerHealth implementa IDamageable
-        }
-
-        // Comprobación principal para atacar
-        if (!CanEngage(currentPlayerTransform, currentPlayerDamageable)) return;
-
-        // Comprobar Rango y Cooldown
-        // Es importante que CanEngage ya haya verificado que currentPlayerTransform no es null
-        float distanceToPlayer = Vector2.Distance(transform.position, currentPlayerTransform.position);
-        if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)
-        {
-            Attack(currentPlayerTransform, currentPlayerDamageable);
+            ExecuteAttack(targetPlayerTransform, targetPlayerDamageable);
         }
     }
 
-    // Modificado para recibir las referencias del jugador
-    private bool CanEngage(Transform targetPlayerTransform, IDamageable targetPlayerDamageable)
+    /// <summary>
+    /// Comprueba si el jugador está dentro del rango de ataque.
+    /// Usado por EnemyMovement para actualizar las observaciones del Agente.
+    /// </summary>
+    public bool IsPlayerInAttackRange(Transform targetPlayerTransform)
     {
-        // canAttack se refiere a si el componente de combate en sí está habilitado para atacar,
-        // no necesariamente si el jugador está al alcance o vivo en este frame.
-        // La condición de vida del jugador y si existe se comprueba con targetPlayerDamageable.
-        return canAttack
-               && health != null && health.IsAlive()
-               && targetPlayerTransform != null // Asegurarse que el transform del jugador existe
-               && targetPlayerDamageable != null && targetPlayerDamageable.IsAlive(); // Asegurarse que el IDamageable existe y está vivo
+        if (targetPlayerTransform == null || health == null || !health.IsAlive())
+        {
+            return false;
+        }
+        return Vector2.Distance(transform.position, targetPlayerTransform.position) <= attackRange;
     }
 
-    // Modificado para recibir las referencias del jugador
-    private void Attack(Transform targetPlayerTransform, IDamageable targetPlayerDamageable)
+    /// <summary>
+    /// Comprueba si el cooldown de ataque ha terminado.
+    /// Usado por EnemyMovement para actualizar las observaciones del Agente.
+    /// </summary>
+    public bool IsAttackOffCooldown()
     {
-        // No necesitamos la doble comprobación de CanEngage aquí si Update ya lo hizo
-        // y pasó las referencias correctas.
+        return Time.time >= lastAttackTime + attackCooldown;
+    }
 
+    /// <summary>
+    /// Verifica todas las condiciones necesarias para poder ejecutar un ataque.
+    /// </summary>
+    private bool CanAttackNow(Transform targetPlayerTransform, IDamageable targetPlayerDamageable)
+    {
+        return health != null && health.IsAlive() &&
+               targetPlayerTransform != null &&
+               targetPlayerDamageable != null && targetPlayerDamageable.IsAlive() &&
+               IsPlayerInAttackRange(targetPlayerTransform) && // Comprueba rango de nuevo
+               IsAttackOffCooldown(); // Comprueba cooldown de nuevo
+    }
+
+    /// <summary>
+    /// Ejecuta la lógica del ataque (daño y animación).
+    /// </summary>
+    private void ExecuteAttack(Transform targetPlayerTransform, IDamageable targetPlayerDamageable)
+    {
         Vector2 directionToPlayer = (targetPlayerTransform.position - transform.position).normalized;
 
-        Debug.Log($"{gameObject.name} attacks player ({targetPlayerTransform.name})!");
+        // Debug.Log($"{gameObject.name} attacks player ({targetPlayerTransform.name})!");
         targetPlayerDamageable.TakeDamage(attackDamage);
         lastAttackTime = Time.time;
 
@@ -98,8 +111,20 @@ public class EnemyCombat : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Llamado por EnemyHealth.Die() para detener futuras acciones de combate.
+    /// </summary>
     public void StopCombat()
     {
-        canAttack = false; // Esto deshabilita la capacidad de este componente para iniciar ataques
+        // Dado que las decisiones se toman en Update/FixedUpdate basadas en health.IsAlive(),
+        // este método no necesita hacer mucho más que quizás detener una animación de ataque en curso
+        // si fuera necesario, pero normalmente el Animator se encargaría de eso al cambiar estados.
+        // Por ahora, lo dejamos así, ya que health.IsAlive() prevendrá nuevos ataques.
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue; // Color del Gizmo para el rango de ataque
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

@@ -78432,7 +78432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8904891101757943043, guid: 3b677d3a73efbdf43b6bfdbc47e728c4, type: 3}
       propertyPath: moveSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78751,6 +78751,14 @@ MonoBehaviour:
   probContainerGivenApple: 0.4
   probAppleGivenContainer: 0.7
   probContainerGivenContainer: 0.3
+  probAppleGivenNone: 0.6
+  probContainerGivenNone: 0.4
+  baseSeedForLCG: 11223
+  lcgMultiplier: 1664525
+  lcgIncrement: 1013904223
+  lcgModulus: 2147483647
+  numSamplesForLCG: 50
+  lcgAlphaTestLevel: 0.05
 --- !u!4 &539834121
 Transform:
   m_ObjectHideFlags: 0
@@ -91568,6 +91576,12 @@ MonoBehaviour:
   minEnemies: 3
   maxEnemies: 6
   delayBetweenEnemyActivation: 0.5
+  baseSeedForLCG: 78901
+  lcgMultiplier: 1664525
+  lcgIncrement: 1013904223
+  lcgModulus: 2147483647
+  numSamplesForLCG: 50
+  lcgAlphaTestLevel: 0.05
   currentState: 0
 --- !u!4 &1921626913
 Transform:
@@ -381996,6 +382010,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2691163418727104467, guid: 4eaf5883c474c82428c0b641446afed4, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3387732431203756050, guid: 4eaf5883c474c82428c0b641446afed4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 140.2
