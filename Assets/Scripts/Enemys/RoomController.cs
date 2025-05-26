@@ -1,225 +1,218 @@
-// RoomController.cs
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; // Necesario para Listas
+using System.Collections.Generic;
+using System.Linq;
 
 public class RoomController : MonoBehaviour
 {
     [Header("Configuración de la Sala")]
-    [Tooltip("Arrastra aquí los GameObjects de las puertas/barreras a bloquear")]
     [SerializeField] private GameObject[] doorsToLock;
-    [Tooltip("El Collider 2D de este objeto que actúa como trigger de activación")]
     [SerializeField] private Collider2D activationTrigger;
-
     [Header("Configuración de Enemigos")]
-    [Tooltip("Arrastra aquí los Prefabs de los enemigos que pueden aparecer")]
     [SerializeField] private GameObject[] enemyPrefabs;
-    [Tooltip("Arrastra aquí los Transforms de los puntos de spawn")]
     [SerializeField] private Transform[] spawnPoints;
-    [Tooltip("Número mínimo de enemigos a generar")]
     [SerializeField] private int minEnemies = 3;
-    [Tooltip("Número máximo de enemigos a generar")]
     [SerializeField] private int maxEnemies = 6;
-    [Tooltip("Retraso en segundos entre la activación de cada enemigo (simula línea de espera)")]
+    [Tooltip("Retraso en segundos entre la activación de cada enemigo por WaitingLine")]
     [SerializeField] private float delayBetweenEnemyActivation = 0.5f;
-
+    [Header("Configuración LCG para RoomController")]
+    [SerializeField] private long baseSeedForLCG = 78901;
+    [SerializeField] private long lcgMultiplier = 1664525;
+    [SerializeField] private long lcgIncrement = 1013904223;
+    [SerializeField] private long lcgModulus = 2147483647;
+    [Tooltip("Cuántos números Ri generar para las decisiones de este RoomController.")]
+    [SerializeField] private int numSamplesForLCG = 50;
+    [SerializeField] private double lcgAlphaTestLevel = 0.05;
     [Header("Estado (Solo Lectura)")]
-    [SerializeField] // Lo mostramos para depurar, pero no lo tocamos en inspector
+    [SerializeField]
     private RoomState currentState = RoomState.Idle;
-
-    // Lista para llevar la cuenta de los enemigos vivos en la sala
-    private List<EnemyHealth> activeEnemies = new List<EnemyHealth>(); // Asumiendo que tus enemigos tienen un script EnemyHealth
-
-    private bool playerInside = false; // Para evitar reactivaciones
-
-    private enum RoomState
-    {
-        Idle,      // Esperando al jugador
-        Locked,    // Jugador dentro, puertas cerradas, enemigos activos
-        Cleared    // Todos los enemigos derrotados, puertas abiertas
-    }
+    private List<EnemyHealth> activeRoomEnemies = new List<EnemyHealth>();
+    private bool playerCurrentlyInside = false;
+    private LCGManager lcgManager;
+    private List<float> lcgNumbersForRoom;
+    private int currentLCGNumberIndex = 0;
+    private bool lcgForRoomInitialized = false;
+    private WaitingLine enemyActivationLine;
+    private enum RoomState { Idle, Locked, Cleared }
 
     private void Awake()
     {
-        if (activationTrigger == null)
+        if (activationTrigger == null && GetComponent<Collider2D>() != null)
         {
             activationTrigger = GetComponent<Collider2D>();
         }
-        // Asegurarse de que las puertas empiezan desactivadas (desbloqueadas)
         SetDoorsLocked(false);
         currentState = RoomState.Idle;
+        long instanceSeed = System.DateTime.Now.Ticks + gameObject.GetInstanceID() + baseSeedForLCG;
+        lcgManager = new LCGManager(instanceSeed, lcgMultiplier, lcgIncrement, lcgModulus, lcgAlphaTestLevel);
+        lcgNumbersForRoom = lcgManager.GetValidatedRiNumbers(numSamplesForLCG, out lcgForRoomInitialized);
+        if (!lcgForRoomInitialized || lcgNumbersForRoom.Count == 0)
+        {
+            Debug.LogError($"RoomController {gameObject.name}: Falló la inicialización del LCG. Se usará Random.value() como fallback.", this);
+        }
+        enemyActivationLine = new WaitingLine(this, delayBetweenEnemyActivation, SetEnemyActive);
+    }
+
+    private float GetNextRoomLCGNumber()
+    {
+        if (lcgForRoomInitialized && lcgNumbersForRoom.Count > 0)
+        {
+            float num = lcgNumbersForRoom[currentLCGNumberIndex];
+            currentLCGNumberIndex = (currentLCGNumberIndex + 1) % lcgNumbersForRoom.Count;
+            return num;
+        }
+        return Random.value;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Solo activar si entró el jugador y la sala está en estado Idle
-        if (currentState == RoomState.Idle && other.CompareTag("Player")) // Asegúrate de que tu jugador tenga el Tag "Player"
+        if (currentState == RoomState.Idle && other.CompareTag("Player"))
         {
-            Debug.Log("Jugador entró en la sala. Bloqueando...");
             StartEncounter();
         }
     }
 
     public void StartEncounter()
     {
+        if (currentState != RoomState.Idle) return;
         currentState = RoomState.Locked;
-        playerInside = true; // Marcamos que el jugador está
-        activationTrigger.enabled = false; // Desactivamos el trigger para no reactivar
-
-        // Bloquear puertas
+        playerCurrentlyInside = true;
+        if (activationTrigger != null)
+        {
+            activationTrigger.enabled = false;
+        }
         SetDoorsLocked(true);
-
-        // Generar enemigos
-        StartCoroutine(SpawnAndActivateEnemies());
-
-        // Aquí podrías añadir otras cosas: cambiar música, mostrar mensaje, etc.
+        StartCoroutine(SpawnAndQueueEnemiesCoroutine());
     }
 
     private void SetDoorsLocked(bool locked)
     {
         foreach (GameObject door in doorsToLock)
         {
-            if (door != null)
-            {
-                door.SetActive(locked);
-            }
+            if (door != null) door.SetActive(locked);
         }
-        Debug.Log($"Puertas {(locked ? "Bloqueadas" : "Desbloqueadas")}");
     }
 
-    private IEnumerator SpawnAndActivateEnemies()
+    private IEnumerator SpawnAndQueueEnemiesCoroutine()
     {
         if (enemyPrefabs.Length == 0 || spawnPoints.Length == 0)
         {
-            Debug.LogError("¡No hay prefabs de enemigos o puntos de spawn asignados en RoomController!");
-            yield break; // Salir de la corutina si no hay nada que spawnear
+            Debug.LogError("RoomController: ¡No hay prefabs de enemigos o puntos de spawn asignados!");
+            yield break;
         }
-
-        activeEnemies.Clear(); // Limpiar lista por si acaso
-        int enemiesToSpawn = Random.Range(minEnemies, maxEnemies + 1); // +1 porque Range(int, int) excluye el máximo
-        Debug.Log($"Generando {enemiesToSpawn} enemigos.");
-
-        List<GameObject> spawnedEnemies = new List<GameObject>(); // Lista temporal para activar
-
+        activeRoomEnemies.Clear();
+        float randomForCount = GetNextRoomLCGNumber();
+        int enemiesToSpawn = minEnemies + Mathf.FloorToInt(randomForCount * (maxEnemies - minEnemies + 1));
+        enemiesToSpawn = Mathf.Clamp(enemiesToSpawn, minEnemies, maxEnemies);
+        enemiesToSpawn = Mathf.Min(enemiesToSpawn, spawnPoints.Length);
+        List<GameObject> newlySpawnedEnemies = new List<GameObject>();
         for (int i = 0; i < enemiesToSpawn; i++)
         {
-            // Elegir prefab y punto de spawn aleatorio
-            GameObject prefabToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-
-            // Instanciar enemigo
+            float randomForPrefab = GetNextRoomLCGNumber();
+            int prefabIndex = Mathf.FloorToInt(randomForPrefab * enemyPrefabs.Length);
+            prefabIndex = Mathf.Clamp(prefabIndex, 0, enemyPrefabs.Length - 1);
+            GameObject prefabToSpawn = enemyPrefabs[prefabIndex];
+            float randomForSpawnPoint = GetNextRoomLCGNumber();
+            int spawnPointIndex = Mathf.FloorToInt(randomForSpawnPoint * spawnPoints.Length);
+            spawnPointIndex = Mathf.Clamp(spawnPointIndex, 0, spawnPoints.Length - 1);
+            Transform spawnPoint = spawnPoints[spawnPointIndex];
             GameObject newEnemy = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
-            spawnedEnemies.Add(newEnemy); // Añadir a la lista temporal
-
-            // Obtener su script de vida y suscribirse a su evento de muerte
+            SetEnemyActive(newEnemy, false);
+            newlySpawnedEnemies.Add(newEnemy);
             EnemyHealth enemyHealth = newEnemy.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                activeEnemies.Add(enemyHealth); // Añadir a la lista de seguimiento principal
-                enemyHealth.OnEnemyDiedCallback += HandleEnemyDefeated; // Suscribirse al evento
-
-                 // --- IMPORTANTE: Para la activación secuencial ---
-                 // Desactivar componentes de IA/Movimiento inicialmente
-                 SetEnemyActive(newEnemy, false);
-                 // ---------------------------------------------
-
-                 // Opcional: Hacer al enemigo hijo del RoomController para organizar la jerarquía
-                 // newEnemy.transform.SetParent(this.transform);
+                activeRoomEnemies.Add(enemyHealth);
+                enemyHealth.OnEnemyDiedCallback += HandleEnemyDefeated;
             }
             else
             {
-                Debug.LogWarning($"Enemigo {newEnemy.name} no tiene script EnemyHealth. No se rastreará.");
-                // Considera destruir este enemigo si es un error crítico
-                // Destroy(newEnemy);
-                // O simplemente añadir el GameObject a una lista diferente si no necesitas rastrear vida
+                Debug.LogWarning($"RoomController: Enemigo {newEnemy.name} no tiene script EnemyHealth.");
             }
-             yield return null; // Pequeña pausa para evitar sobrecarga en un frame si spawneas muchos
+            yield return null;
         }
-
-        // --- Activación Secuencial ("Línea de Espera") ---
-        Debug.Log("Comenzando activación secuencial de enemigos...");
-        foreach(GameObject enemyGO in spawnedEnemies)
-        {
-            if (enemyGO != null) // Comprobar si no fue destruido por alguna razón
-            {
-                SetEnemyActive(enemyGO, true); // Activar IA/Movimiento
-                Debug.Log($"Activando enemigo: {enemyGO.name}");
-                yield return new WaitForSeconds(delayBetweenEnemyActivation); // Esperar antes de activar el siguiente
-            }
-        }
-         Debug.Log("Todos los enemigos activados.");
-        // -------------------------------------------------
+        enemyActivationLine.AddEnemiesToQueue(newlySpawnedEnemies);
+        enemyActivationLine.StartProcessingQueue();
     }
 
-    // Método helper para activar/desactivar IA del enemigo
-    private void SetEnemyActive(GameObject enemy, bool isActive)
+    public void SetEnemyActive(GameObject enemy, bool isActive)
     {
+        if (enemy == null) return;
         var movementScript = enemy.GetComponent<EnemyMovement>();
         var combatScript = enemy.GetComponent<EnemyCombat>();
         if (movementScript != null) movementScript.enabled = isActive;
         if (combatScript != null) combatScript.enabled = isActive;
         var rb = enemy.GetComponent<Rigidbody2D>();
-    if (rb != null)
-    {
-        if (!isActive)
+        if (rb != null)
         {
-            rb.linearVelocity = Vector2.zero; // Detener movimiento físico
-            rb.angularVelocity = 0f;
-            // Considera si quieres desactivar la simulación física por completo:
-            // rb.simulated = isActive;
-        } else {
-             // rb.simulated = true; // Asegurarse de que esté simulado si lo desactivaste antes
+            if (!isActive)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.angularVelocity = 0f;
+            }
         }
     }
-        // Añade un log para verificar
-        Debug.Log($"SetEnemyActive en '{enemy.name}' a: {isActive}. Movement Enabled: {movementScript?.enabled}. Combat Enabled: {combatScript?.enabled}");
-    }
 
-
-    // Este método se llamará cuando un enemigo muera (gracias a la suscripción al evento)
     private void HandleEnemyDefeated(EnemyHealth defeatedEnemy)
     {
-        Debug.Log($"Enemigo derrotado: {defeatedEnemy.gameObject.name}");
-        if (defeatedEnemy != null) // Comprobar si no es null (puede pasar si se destruye antes)
+        if (defeatedEnemy != null)
         {
             defeatedEnemy.OnEnemyDiedCallback -= HandleEnemyDefeated;
         }
-        if (activeEnemies.Contains(defeatedEnemy))
+        if (activeRoomEnemies.Contains(defeatedEnemy))
         {
-            activeEnemies.Remove(defeatedEnemy);
-            Debug.Log($"Enemigos restantes: {activeEnemies.Count}");
-            // Comprobar si ya no quedan enemigos
-            if (activeEnemies.Count == 0 && currentState == RoomState.Locked)
+            activeRoomEnemies.Remove(defeatedEnemy);
+            if (activeRoomEnemies.Count == 0 && currentState == RoomState.Locked)
             {
                 CompleteEncounter();
             }
-        } else
-        {
-            Debug.LogWarning($"HandleEnemyDefeated llamado para {defeatedEnemy?.name}, pero no estaba en la lista activeEnemies.");
         }
     }
 
     private void CompleteEncounter()
     {
-        Debug.Log("¡Todos los enemigos derrotados! Desbloqueando sala.");
         currentState = RoomState.Cleared;
-
-        // Desbloquear puertas
+        playerCurrentlyInside = false;
         SetDoorsLocked(false);
-
-        // Aquí podrías añadir otras cosas: cambiar música a normal, dar recompensa, etc.
     }
 
-     // --- Importante: Limpieza al destruir el objeto ---
     private void OnDestroy()
     {
-        foreach(var enemyHealth in activeEnemies)
+        foreach (var enemyHealth in activeRoomEnemies)
         {
-            if(enemyHealth != null)
+            if (enemyHealth != null)
             {
                 enemyHealth.OnEnemyDiedCallback -= HandleEnemyDefeated;
             }
         }
-        activeEnemies.Clear();
+        activeRoomEnemies.Clear();
+        enemyActivationLine?.StopProcessingQueue();
     }
-} 
+
+    public void ResetRoomForRetry()
+    {
+        if (currentState == RoomState.Cleared || currentState == RoomState.Locked)
+        {
+            Debug.Log($"RoomController ({gameObject.name}): Reseteando la sala para reintento.");
+            enemyActivationLine?.StopProcessingQueue();
+            List<EnemyHealth> enemiesToDestroy = new List<EnemyHealth>(activeRoomEnemies);
+            activeRoomEnemies.Clear();
+            foreach (var enemyHealth in enemiesToDestroy)
+            {
+                if (enemyHealth != null)
+                {
+                    enemyHealth.OnEnemyDiedCallback -= HandleEnemyDefeated;
+                    Destroy(enemyHealth.gameObject);
+                }
+            }
+            SetDoorsLocked(false);
+            currentState = RoomState.Idle;
+            playerCurrentlyInside = false;
+            if (activationTrigger != null)
+            {
+                activationTrigger.enabled = true;
+            }
+            Debug.Log($"RoomController ({gameObject.name}): Sala reseteada a Idle.");
+        }
+    }
+}

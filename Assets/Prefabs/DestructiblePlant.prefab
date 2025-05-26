@@ -117,7 +117,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   heartPickupPrefab: {fileID: 9083485314377207983, guid: 44af6b989ec09a24996eeccee67ddb22, type: 3}
-  heartDropChance: 0.4
+  heartDropChance: 0.3
+  baseSeedForLCG: 54321
+  lcgMultiplier: 1664525
+  lcgIncrement: 1013904223
+  lcgModulus: 2147483647
+  numSamplesForLCG: 10
+  lcgAlphaTestLevel: 0.05
 --- !u!61 &-1914807536515583948
 BoxCollider2D:
   m_ObjectHideFlags: 0

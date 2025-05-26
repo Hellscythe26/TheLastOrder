@@ -1,38 +1,74 @@
-// DestructiblePlant.cs
 using UnityEngine;
+using System.Collections.Generic;
 
-// Implementamos IDamageable para que pueda recibir daño del jugador
 public class DestructiblePlant : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     [Tooltip("Cuántos golpes necesita para destruirse (o cuánta vida tiene)")]
-    [SerializeField] private float health = 1f; // Por ejemplo, 1 golpe la destruye
-
+    [SerializeField] private float health = 1f;
     [Header("Drops")]
     [Tooltip("Arrastra aquí el Prefab del HeartPickup")]
     [SerializeField] private GameObject heartPickupPrefab;
     [Tooltip("Probabilidad (0.0 a 1.0) de soltar el corazón al destruirse")]
-    [Range(0f, 1f)] // Slider en el inspector
-    [SerializeField] private float heartDropChance = 0.5f; // 50% por defecto
+    [Range(0f, 1f)]
+    [SerializeField] private float heartDropChance = 0.5f;
+    [Header("LCG Parameters (para la decisión de drop)")]
+    [Tooltip("Semilla base, se aleatorizará si es necesario para cada instancia.")]
+    [SerializeField] private long baseSeedForLCG = 54321;
+    [SerializeField] private long lcgMultiplier = 1664525;
+    [SerializeField] private long lcgIncrement = 1013904223;
+    [SerializeField] private long lcgModulus = 2147483647;
+    [Tooltip("Cuántos números Ri generar y probar. Para una sola decisión de drop, 1 es técnicamente suficiente si confías en los parámetros, o un número mayor (ej. 10) para asegurar que las pruebas del LCGManager pasen si las usas estrictamente.")]
+    [SerializeField] private int numSamplesForLCG = 10;
+    [Tooltip("Nivel Alpha para las pruebas estadísticas (ej: 0.05).")]
+    [SerializeField] private double lcgAlphaTestLevel = 0.05;
+    private bool isAlive = true;
+    private LCGManager lcgManager;
+    private List<float> availableRandomNumbers;
+    private int currentRandomNumberIndex = 0;
+    private bool lcgInitialized = false;
 
-    // Opcional: Animación/Efectos
-    // [SerializeField] private Animator animator;
-    // [SerializeField] private GameObject destructionEffect;
-    // private const string HIT_TRIGGER = "Hit";
-    // private const string DESTROY_TRIGGER = "Destroy";
+    private void Awake()
+    {
+        long instanceSeed = System.DateTime.Now.Ticks + gameObject.GetInstanceID() + baseSeedForLCG;
+        lcgManager = new LCGManager(
+            instanceSeed,
+            lcgMultiplier,
+            lcgIncrement,
+            lcgModulus,
+            lcgAlphaTestLevel
+        );
+        availableRandomNumbers = lcgManager.GetValidatedRiNumbers(
+            numSamplesForLCG,
+            out bool generationSucceeded
+        );
+        if (generationSucceeded && availableRandomNumbers != null && availableRandomNumbers.Count > 0)
+        {
+            lcgInitialized = true;
+        }
+        else
+        {
+            lcgInitialized = false;
+            Debug.LogError($"DestructiblePlant {gameObject.name}: Falló la inicialización del LCG. La decisión de drop usará Random.value() como fallback.", this);
+        }
+    }
 
-    private bool isAlive = true; // Para implementar IDamageable
-
-    // --- IDamageable Implementation ---
+    private float GetNextLCGRandomNumber()
+    {
+        if (!lcgInitialized || availableRandomNumbers == null || availableRandomNumbers.Count == 0)
+        {
+            Debug.LogWarning($"DestructiblePlant {gameObject.name}: LCG no inicializado o sin números. Usando Random.value() como fallback.");
+            return Random.value;
+        }
+        float randomNumber = availableRandomNumbers[currentRandomNumberIndex];
+        currentRandomNumberIndex = (currentRandomNumberIndex + 1) % availableRandomNumbers.Count;
+        return randomNumber;
+    }
 
     public void TakeDamage(float damage)
     {
-        if (!isAlive) return; // No hacer nada si ya está destruida
-
+        if (!isAlive) return;
         health -= damage;
-        // Opcional: Disparar animación de golpe
-        // if (animator != null) animator.SetTrigger(HIT_TRIGGER);
-
         if (health <= 0)
         {
             Die();
@@ -44,44 +80,18 @@ public class DestructiblePlant : MonoBehaviour, IDamageable
         return isAlive;
     }
 
-    // --- Lógica de Destrucción ---
-
     private void Die()
     {
-        if (!isAlive) return; // Evitar doble ejecución
+        if (!isAlive) return;
         isAlive = false;
-        Debug.Log("Planta destruida!");
-
-        // --- Lógica de Drop ---
-        if (heartPickupPrefab != null) // Comprobar si hay prefab asignado
+        if (heartPickupPrefab != null) //
         {
-            // Generar un número aleatorio entre 0.0 y 1.0
-            float randomValue = Random.value; // UnityEngine.Random.value
-
-            if (randomValue <= heartDropChance)
+            float randomValue = GetNextLCGRandomNumber();
+            if (randomValue <= heartDropChance) //
             {
-                // ¡Soltar el corazón!
-                Debug.Log("¡Soltando corazón!");
-                Instantiate(heartPickupPrefab, transform.position, Quaternion.identity);
-            }
-            else
-            {
-                Debug.Log("No se soltó corazón esta vez.");
+                Instantiate(heartPickupPrefab, transform.position, Quaternion.identity); //
             }
         }
-        else
-        {
-            Debug.LogWarning("Heart Pickup Prefab no asignado en la planta.", this);
-        }
-        // --- Fin Lógica de Drop ---
-
-
-        // Opcional: Disparar animación/efecto de destrucción
-        // if (animator != null) animator.SetTrigger(DESTROY_TRIGGER);
-        // if (destructionEffect != null) Instantiate(destructionEffect, transform.position, Quaternion.identity);
-
-        // Destruir el GameObject de la planta
-        // Podrías añadir un pequeño delay si tienes animación de destrucción
-        Destroy(gameObject /*, delay*/);
+        Destroy(gameObject);
     }
 }

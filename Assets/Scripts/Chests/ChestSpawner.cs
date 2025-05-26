@@ -1,159 +1,178 @@
-// ChestSpawner.cs
 using UnityEngine;
-using System.Collections.Generic; // Para List
-using System.Linq; // Para OrderBy
+using System.Collections.Generic;
+using System.Linq;
 
 public class ChestSpawner : MonoBehaviour
 {
     [Header("Configuración General")]
-    [Tooltip("Arrastra aquí todos los GameObjects que marcan posibles posiciones de cofres")]
     [SerializeField] private Transform[] potentialSpawnPoints;
-    [Tooltip("Prefab del cofre a instanciar")]
     [SerializeField] private GameObject chestPrefab;
-    [Tooltip("Número mínimo de cofres a generar")]
-    [SerializeField] private int minChests = 5;
-    [Tooltip("Número máximo de cofres a generar")]
-    [SerializeField] private int maxChests = 10;
-
+    [SerializeField] private int minChests = 3;
+    [SerializeField] private int maxChests = 7;
     [Header("Contenido de Cofres")]
-    [Tooltip("Prefab del contenedor de corazón")]
     [SerializeField] private GameObject heartContainerPrefab;
-    [Tooltip("Prefab de la manzana")]
     [SerializeField] private GameObject applePrefab;
+    [Header("Probabilidades de Transición de Contenido (Markov)")]
+    [Range(0f, 1f)] public float probAppleGivenApple = 0.7f;
+    [Range(0f, 1f)] public float probContainerGivenApple = 0.3f;
+    [Range(0f, 1f)] public float probAppleGivenContainer = 0.9f;
+    [Range(0f, 1f)] public float probContainerGivenContainer = 0.1f;
+    [Range(0f, 1f)] public float probAppleGivenNone = 0.6f;
+    [Range(0f, 1f)] public float probContainerGivenNone = 0.4f;
+    [Header("Configuración LCG para ChestSpawner")]
+    [SerializeField] private long baseSeedForLCG = 11223;
+    [SerializeField] private long lcgMultiplier = 1664525;
+    [SerializeField] private long lcgIncrement = 1013904223;
+    [SerializeField] private long lcgModulus = 2147483647;
+    [SerializeField] private int numSamplesForLCG = 50;
+    [SerializeField] private double lcgAlphaTestLevel = 0.05;
+    public enum ItemChestState { None, Apple, HeartContainer }
+    private LCGManager lcgManager;
+    private List<float> availableRandomNumbers;
+    private int currentRandomNumberIndex = 0;
+    private bool lcgForSpawnerInitialized = false;
+    private Markov<ItemChestState> itemMarkovChain;
 
-    [Header("Cadena de Markov para Contenido")]
-    [Tooltip("Probabilidad de obtener Manzana si el cofre ANTERIOR tenía Manzana")]
-    [Range(0f, 1f)]
-    [SerializeField] private float probAppleGivenApple = 0.7f; // P(A|A)
+    void Awake()
+    {
+        long instanceSeed = System.DateTime.Now.Ticks + gameObject.GetInstanceID() + baseSeedForLCG;
+        lcgManager = new LCGManager(instanceSeed, lcgMultiplier, lcgIncrement, lcgModulus, lcgAlphaTestLevel);
+        availableRandomNumbers = lcgManager.GetValidatedRiNumbers(numSamplesForLCG, out lcgForSpawnerInitialized);
+        if (!lcgForSpawnerInitialized || availableRandomNumbers.Count == 0)
+        {
+            Debug.LogError("ChestSpawner: Falló la inicialización del LCG interno. Las decisiones aleatorias usarán Random.value() como fallback.", this);
+        }
 
-    [Tooltip("Probabilidad de obtener Contenedor si el cofre ANTERIOR tenía Manzana")]
-    [Range(0f, 1f)]
-    [SerializeField] private float probContainerGivenApple = 0.3f; // P(C|A)
-
-    [Tooltip("Probabilidad de obtener Manzana si el cofre ANTERIOR tenía Contenedor")]
-    [Range(0f, 1f)]
-    [SerializeField] private float probAppleGivenContainer = 0.9f; // P(A|C)
-
-    [Tooltip("Probabilidad de obtener Contenedor si el cofre ANTERIOR tenía Contenedor")]
-    [Range(0f, 1f)]
-    [SerializeField] private float probContainerGivenContainer = 0.1f; // P(C|C)
-
-    // Estado de Markov (qué contenía el último cofre generado)
-    private enum LastItemState { None, Apple, HeartContainer }
-    private LastItemState lastItemGenerated = LastItemState.None;
+        InitializeItemMarkovChain();
+    }
 
     void Start()
     {
-        // Validar probabilidades (cada par debe sumar ~1)
         ValidateProbabilities();
-
         SpawnChests();
+    }
+
+    private float GetNextLCGNumberForMarkov()
+    {
+        if (lcgForSpawnerInitialized && availableRandomNumbers.Count > 0)
+        {
+            float num = availableRandomNumbers[currentRandomNumberIndex];
+            currentRandomNumberIndex = (currentRandomNumberIndex + 1) % availableRandomNumbers.Count;
+            return num;
+        }
+        Debug.LogWarning("ChestSpawner: LCG interno no disponible para Markov, usando Random.value().");
+        return Random.value;
+    }
+
+    void InitializeItemMarkovChain()
+    {
+        var transitionMatrix = new Dictionary<ItemChestState, Dictionary<ItemChestState, float>>
+        {
+            {
+                ItemChestState.None, new Dictionary<ItemChestState, float>
+                {
+                    { ItemChestState.Apple, probAppleGivenNone },
+                    { ItemChestState.HeartContainer, probContainerGivenNone }
+                }
+            },
+            {
+                ItemChestState.Apple, new Dictionary<ItemChestState, float>
+                {
+                    { ItemChestState.Apple, probAppleGivenApple },
+                    { ItemChestState.HeartContainer, probContainerGivenApple }
+                }
+            },
+            {
+                ItemChestState.HeartContainer, new Dictionary<ItemChestState, float>
+                {
+                    { ItemChestState.Apple, probAppleGivenContainer },
+                    { ItemChestState.HeartContainer, probContainerGivenContainer }
+                }
+            }
+        };
+        itemMarkovChain = new Markov<ItemChestState>(ItemChestState.None, transitionMatrix, GetNextLCGNumberForMarkov);
     }
 
     void ValidateProbabilities()
     {
+        if (!Mathf.Approximately(probAppleGivenNone + probContainerGivenNone, 1.0f))
+            Debug.LogWarning("Probabilidades Markov para estado 'None' no suman 1.0!");
         if (!Mathf.Approximately(probAppleGivenApple + probContainerGivenApple, 1.0f))
-        {
-            Debug.LogWarning("Probabilidades dado Manzana no suman 1!");
-            // Opcional: Normalizar aquí si quieres auto-corregir
-        }
+            Debug.LogWarning("Probabilidades Markov para estado 'Apple' no suman 1.0!");
         if (!Mathf.Approximately(probAppleGivenContainer + probContainerGivenContainer, 1.0f))
+            Debug.LogWarning("Probabilidades Markov para estado 'HeartContainer' no suman 1.0!");
+    }
+
+    private float GetNextGeneralRandomNumber()
+    {
+        if (lcgForSpawnerInitialized && availableRandomNumbers.Count > 0)
         {
-            Debug.LogWarning("Probabilidades dado Contenedor no suman 1!");
+            float num = availableRandomNumbers[currentRandomNumberIndex];
+            currentRandomNumberIndex = (currentRandomNumberIndex + 1) % availableRandomNumbers.Count;
+            return num;
         }
+        Debug.LogWarning("ChestSpawner: LCG interno no disponible, usando Random.value() para decisión general.");
+        return Random.value;
     }
 
     void SpawnChests()
     {
         if (potentialSpawnPoints.Length == 0 || chestPrefab == null || heartContainerPrefab == null || applePrefab == null)
         {
-            Debug.LogError("Faltan referencias en ChestSpawner (SpawnPoints, Prefabs). No se generarán cofres.");
+            Debug.LogError("Faltan referencias en ChestSpawner. No se generarán cofres.");
             return;
         }
-
-        int numChestsToSpawn = Random.Range(minChests, maxChests + 1);
-        // Asegurarse de no intentar generar más cofres que puntos disponibles
+        float randomForCount = GetNextGeneralRandomNumber();
+        int numChestsToSpawn = minChests + Mathf.FloorToInt(randomForCount * (maxChests - minChests + 1));
+        numChestsToSpawn = Mathf.Clamp(numChestsToSpawn, minChests, maxChests);
         numChestsToSpawn = Mathf.Min(numChestsToSpawn, potentialSpawnPoints.Length);
-
         Debug.Log($"Intentando generar {numChestsToSpawn} cofres...");
-
-        // --- Selección Aleatoria de Ubicaciones ÚNICAS ---
-        // 1. Crear una lista de índices de los puntos disponibles
-        List<int> availableIndices = Enumerable.Range(0, potentialSpawnPoints.Length).ToList();
-        // 2. Barajar aleatoriamente la lista de índices
-        System.Random rng = new System.Random();
-        availableIndices = availableIndices.OrderBy(x => rng.Next()).ToList();
-        // 3. Tomar los primeros 'numChestsToSpawn' índices de la lista barajada
-        List<int> chosenIndices = availableIndices.Take(numChestsToSpawn).ToList();
-        // -------------------------------------------------
-
-        // --- Generar Cofres en las Ubicaciones Elegidas ---
-        foreach (int index in chosenIndices)
+        List<Transform> chosenSpawnPoints = SelectRandomUniqueSpawnPoints(numChestsToSpawn);
+        foreach (Transform spawnPoint in chosenSpawnPoints)
         {
-            Transform spawnPoint = potentialSpawnPoints[index];
-
-            // --- Decidir Contenido usando Cadena de Markov ---
-            GameObject itemToContain = DetermineNextItem();
-            // ---------------------------------------------
-
-            // Instanciar el cofre
+            ItemChestState nextItemState = itemMarkovChain.GetNextState();
+            GameObject itemToContain = null;
+            switch (nextItemState)
+            {
+                case ItemChestState.Apple:
+                    itemToContain = applePrefab;
+                    break;
+                case ItemChestState.HeartContainer:
+                    itemToContain = heartContainerPrefab;
+                    break;
+                default:
+                    Debug.LogError("Estado de item Markov inesperado o no manejado.");
+                    itemToContain = applePrefab;
+                    break;
+            }
             GameObject chestInstance = Instantiate(chestPrefab, spawnPoint.position, spawnPoint.rotation);
-
-            // Configurar el cofre con el item que contendrá
             ChestController chestController = chestInstance.GetComponent<ChestController>();
             if (chestController != null)
             {
                 chestController.SetContainedItem(itemToContain);
-                //Debug.Log($"Cofre generado en {spawnPoint.name} contendrá {itemToContain.name}");
             }
             else
             {
                 Debug.LogError($"El prefab del cofre ({chestPrefab.name}) no tiene el script ChestController!");
-                Destroy(chestInstance); // Destruir si está mal configurado
+                Destroy(chestInstance);
             }
         }
-         Debug.Log($"Generados {chosenIndices.Count} cofres.");
+        Debug.Log($"Generados {chosenSpawnPoints.Count} cofres.");
     }
 
-    // --- Lógica de la Cadena de Markov para el Contenido ---
-    GameObject DetermineNextItem()
+    private List<Transform> SelectRandomUniqueSpawnPoints(int count)
     {
-        float randomValue = Random.value; // Valor aleatorio [0.0, 1.0)
-        GameObject chosenItem;
-
-        // Determinar probabilidades basadas en el estado anterior
-        float probApple; // Probabilidad de que el item actual sea Manzana
-
-        switch (lastItemGenerated)
+        List<Transform> allPoints = new List<Transform>(potentialSpawnPoints);
+        List<Transform> chosenPoints = new List<Transform>();
+        for (int i = 0; i < count; i++)
         {
-            case LastItemState.Apple:
-                probApple = probAppleGivenApple;
-                break;
-            case LastItemState.HeartContainer:
-                probApple = probAppleGivenContainer;
-                break;
-            case LastItemState.None: // Primer cofre, usar probabilidades base (podríamos definirlas o usar un promedio)
-            default:
-                // Para el primer cofre, usemos una probabilidad simple (ej. 50/50 o basado en Apple|Apple)
-                // O podrías definir P(A|None) y P(C|None) explícitamente
-                probApple = probAppleGivenApple; // Usar P(A|A) como una base razonable
-                // Otra opción: probApple = 0.5f;
-                break;
+            if (allPoints.Count == 0) break;
+            float randomForIndex = GetNextGeneralRandomNumber();
+            int randomIndex = Mathf.FloorToInt(randomForIndex * allPoints.Count);
+            randomIndex = Mathf.Clamp(randomIndex, 0, allPoints.Count - 1);
+            chosenPoints.Add(allPoints[randomIndex]);
+            allPoints.RemoveAt(randomIndex);
         }
-
-        // Decidir el item actual
-        if (randomValue < probApple)
-        {
-            chosenItem = applePrefab;
-            lastItemGenerated = LastItemState.Apple; // Actualizar estado
-        }
-        else
-        {
-            chosenItem = heartContainerPrefab;
-            lastItemGenerated = LastItemState.HeartContainer; // Actualizar estado
-        }
-
-        return chosenItem;
+        return chosenPoints;
     }
-    // --- Fin Lógica Markov ---
 }

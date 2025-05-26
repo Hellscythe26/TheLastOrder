@@ -1,4 +1,4 @@
-// En EnemyCombat.cs
+// EnemyCombat.cs
 using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
@@ -10,95 +10,96 @@ public class EnemyCombat : MonoBehaviour
 
     [Header("Component References")]
     [SerializeField] private EnemyHealth health;
-    [SerializeField] private Animator animator; // Necesitamos la referencia
+    [SerializeField] private Animator animator;
 
-    // Internals
-    private Transform playerTransform;
-    private IDamageable playerDamageable;
+    // Ya no necesitamos playerTransform y playerDamageable como variables de clase
     private float lastAttackTime = -Mathf.Infinity;
-    private bool canAttack = true;
+    private bool canAttack = true; // Esta se maneja ahora basado en si el jugador existe y está vivo
 
-    // Constantes para Triggers de Animación (¡DEBEN COINCIDIR CON TU ANIMATOR!)
     private const string ATTACK_UP_TRIGGER = "AttackUp";
     private const string ATTACK_DOWN_TRIGGER = "AttackDown";
     private const string ATTACK_LEFT_TRIGGER = "AttackLeft";
     private const string ATTACK_RIGHT_TRIGGER = "AttackRight";
 
-
     private void Awake()
     {
         health = GetComponent<EnemyHealth>();
-        animator = GetComponent<Animator>(); // Obtener Animator
+        animator = GetComponent<Animator>();
         if (animator == null) Debug.LogWarning("Animator component missing on EnemyCombat obj!", this);
 
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        if (playerObject != null) {
-            playerTransform = playerObject.transform;
-            playerDamageable = playerObject.GetComponent<IDamageable>();
-            if (playerDamageable == null) {
-                 canAttack = false;
-            }
-        } else {
-            canAttack = false;
-        }
+        // Ya no buscamos al jugador en Awake aquí
     }
 
     private void Update()
     {
+        // Obtenemos las referencias al jugador aquí, cada frame que necesitemos atacar.
+        // Esto asegura que siempre tengamos la instancia correcta del jugador persistente.
+        Transform currentPlayerTransform = null;
+        IDamageable currentPlayerDamageable = null;
+
+        if (Player.Instance != null) // Usamos el Singleton Player.Instance
+        {
+            currentPlayerTransform = Player.Instance.transform;
+            currentPlayerDamageable = Player.Instance.GetComponent<IDamageable>(); // PlayerHealth implementa IDamageable
+        }
+
         // Comprobación principal para atacar
-        if (!CanEngage()) return;
+        if (!CanEngage(currentPlayerTransform, currentPlayerDamageable)) return;
 
         // Comprobar Rango y Cooldown
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        // Es importante que CanEngage ya haya verificado que currentPlayerTransform no es null
+        float distanceToPlayer = Vector2.Distance(transform.position, currentPlayerTransform.position);
         if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
-            Attack();
+            Attack(currentPlayerTransform, currentPlayerDamageable);
         }
     }
 
-    // Función helper para comprobar si se puede atacar en general
-    private bool CanEngage()
+    // Modificado para recibir las referencias del jugador
+    private bool CanEngage(Transform targetPlayerTransform, IDamageable targetPlayerDamageable)
     {
-         return canAttack
-                && health != null && health.IsAlive()
-                && playerTransform != null && playerDamageable != null && playerDamageable.IsAlive();
+        // canAttack se refiere a si el componente de combate en sí está habilitado para atacar,
+        // no necesariamente si el jugador está al alcance o vivo en este frame.
+        // La condición de vida del jugador y si existe se comprueba con targetPlayerDamageable.
+        return canAttack
+               && health != null && health.IsAlive()
+               && targetPlayerTransform != null // Asegurarse que el transform del jugador existe
+               && targetPlayerDamageable != null && targetPlayerDamageable.IsAlive(); // Asegurarse que el IDamageable existe y está vivo
     }
 
-
-    private void Attack()
+    // Modificado para recibir las referencias del jugador
+    private void Attack(Transform targetPlayerTransform, IDamageable targetPlayerDamageable)
     {
-        if (!CanEngage()) return; // Doble check
+        // No necesitamos la doble comprobación de CanEngage aquí si Update ya lo hizo
+        // y pasó las referencias correctas.
 
-        // Calcular dirección ANTES de aplicar daño (por si el jugador se mueve)
-        Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
+        Vector2 directionToPlayer = (targetPlayerTransform.position - transform.position).normalized;
 
-        Debug.Log($"{gameObject.name} attacks player!");
-        playerDamageable.TakeDamage(attackDamage);
+        Debug.Log($"{gameObject.name} attacks player ({targetPlayerTransform.name})!");
+        targetPlayerDamageable.TakeDamage(attackDamage);
         lastAttackTime = Time.time;
 
-        // Disparar Animación de Ataque Direccional
         TriggerDirectionalAttackAnim(directionToPlayer);
     }
 
     private void TriggerDirectionalAttackAnim(Vector2 direction)
     {
-         if (animator == null) return;
+        if (animator == null) return;
 
-         // Determinar la dirección principal del ataque
-         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y)) {
-             // Horizontal
-             if (direction.x > 0) animator.SetTrigger(ATTACK_RIGHT_TRIGGER);
-             else animator.SetTrigger(ATTACK_LEFT_TRIGGER);
-         } else {
-             // Vertical (o igual)
-             if (direction.y > 0) animator.SetTrigger(ATTACK_UP_TRIGGER);
-             else animator.SetTrigger(ATTACK_DOWN_TRIGGER);
-         }
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if (direction.x > 0) animator.SetTrigger(ATTACK_RIGHT_TRIGGER);
+            else animator.SetTrigger(ATTACK_LEFT_TRIGGER);
+        }
+        else
+        {
+            if (direction.y > 0) animator.SetTrigger(ATTACK_UP_TRIGGER);
+            else animator.SetTrigger(ATTACK_DOWN_TRIGGER);
+        }
     }
 
-
-    public void StopCombat() // Llamado por EnemyHealth.Die()
+    public void StopCombat()
     {
-        canAttack = false;
+        canAttack = false; // Esto deshabilita la capacidad de este componente para iniciar ataques
     }
 }
