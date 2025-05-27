@@ -1,148 +1,157 @@
-// --- En UIHealthBar.cs ---
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections.Generic;
+using UnityEngine.UI; // Necesario para interactuar con componentes UI como Image.
+using System.Collections.Generic; // Necesario para List<Image>.
 
+/// <summary>
+/// Gestiona la visualización de la barra de vida del jugador en la UI.
+/// Se suscribe a los eventos de PlayerHealth para actualizar dinámicamente
+/// el número de contenedores de corazón y su estado (lleno, medio, vacío).
+/// </summary>
 public class UIHealthBar : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
+    [Tooltip("Referencia al script PlayerHealth del jugador. Se intentará obtener de Player.Instance si se deja vacío.")]
+    public PlayerHealth playerHealth; // Referencia al script de vida del jugador.
+    [Tooltip("Sprite para un corazón completamente lleno.")]
     public Sprite fullHeart;
-    public Sprite halfHeart; // Necesario para la lógica 1 a 1 con medios
+    [Tooltip("Sprite para medio corazón.")]
+    public Sprite halfHeart;
+    [Tooltip("Sprite para un contenedor de corazón vacío.")]
     public Sprite emptyHeart;
-    // public float pointsPerHeart = 1f; // <-- ELIMINADO
-    public GameObject heartPrefab;
-
+    [Tooltip("Prefab del GameObject UI que representa un solo contenedor de corazón. Debe tener un componente Image.")]
+    public GameObject heartPrefab; // Prefab para instanciar los corazones en la UI.
+    // Lista para almacenar las referencias a los componentes Image de cada corazón instanciado.
     private List<Image> heartImages = new List<Image>();
 
+    /// <summary>
+    /// Se llama antes del primer frame de Update.
+    /// Busca la referencia a PlayerHealth, valida los prefabs y sprites,
+    /// y se suscribe a los eventos de cambio de salud y vida máxima del jugador.
+    /// </summary>
     private void Start()
     {
-        if (Player.Instance != null) // Usa la instancia Singleton de Player.cs
+        // Intenta obtener PlayerHealth desde el Singleton Player.Instance si no está asignado.
+        if (playerHealth == null)
         {
-            playerHealth = Player.Instance.GetComponent<PlayerHealth>();
-            if (playerHealth == null)
+            if (Player.Instance != null)
             {
-                 Debug.LogError("¡No se encontró el componente PlayerHealth en Player.Instance!", this.gameObject);
-                 return;
-            }
-        }
-        else
-        {
-             Debug.LogError("¡No se encontró Player.Instance! Asegúrate de que el jugador exista y use DontDestroyOnLoad.", this.gameObject);
-             return; // Salir si no hay jugador
-        }
-        if (heartPrefab == null)
-        {
-            Debug.LogError("Heart Prefab no está asignado en UIHealthBar.", this.gameObject);
-            return;
-        }
-
-        // Suscribirse a los eventos
-        playerHealth.OnHealthChanged.AddListener(UpdateHealthBarSprites);
-        playerHealth.OnMaxHealthChanged.AddListener(SetupHearts);
-        SetupHearts();
-        // La configuración inicial ocurrirá vía eventos desde PlayerHealth.Start()
-    }
-
-    // Reconstruye los contenedores de corazón
-    void SetupHearts()
-    {
-        // Limpiar bien
-        foreach (Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
-        heartImages.Clear();
-
-        // Obtener la capacidad máxima ACTUAL de contenedores de corazón
-        int numberOfHeartContainers = playerHealth.CurrentMaxHearts;
-
-        // Instanciar los contenedores
-        for (int i = 0; i < numberOfHeartContainers; i++)
-        {
-            GameObject heartInstance = Instantiate(heartPrefab, transform);
-            heartInstance.name = "Heart_" + i;
-            Image heartImage = heartInstance.GetComponent<Image>();
-            if (heartImage != null)
-            {
-                heartImages.Add(heartImage);
-                heartImage.sprite = emptyHeart;
-                heartImage.enabled = true;
-            }
-             else
-            {
-                 Debug.LogError("El prefab del corazón no tiene un componente Image!", heartInstance);
-            }
-        }
-
-        // Actualizar los sprites al estado correcto después de crear los contenedores
-        UpdateHealthBarSprites(playerHealth.CurrentHealth);
-    }
-
-    // Actualiza los sprites (lleno/medio/vacío) usando la lógica 1 a 1
-    void UpdateHealthBarSprites(float currentHealthValue) // Recibe vida en "corazones" (ej: 2.5f)
-    {
-        // Iterar sobre los contenedores de corazón existentes
-        for (int i = 0; i < heartImages.Count; i++)
-        {
-            // Lógica original 1 a 1 (como en tu primer script UIHealthBar.cs)
-            if (currentHealthValue >= (i + 1f)) // Si la vida es >= al valor que representa este corazón lleno (i+1)
-            {
-                heartImages[i].sprite = fullHeart;
-            }
-            else if (currentHealthValue > i) // Si la vida es > que el inicio de este corazón (i), pero no llega a i+1
-            {
-                 // Aquí podrías decidir si cualquier valor > i muestra medio corazón,
-                 // o si necesitas > i + 0.5f para mostrar medio. La lógica original era "> i",
-                 // pero "> i + 0.5f" es más común para representar "al menos la mitad".
-                 // Usemos la lógica más precisa: > i + 0.5f para lleno, > i para medio.
-
-                 if (currentHealthValue >= (i + 0.5f)) // Si es al menos la mitad de este corazón
-                 {
-                    heartImages[i].sprite = halfHeart;
-                 }
-                 else // Si es más que 'i' pero menos que 'i + 0.5', ¿qué mostrar?
-                 {
-                     // Podrías mostrar medio corazón también, o vacío.
-                     // Lo más intuitivo suele ser:
-                     // >= i + 1   -> Lleno
-                     // >= i + 0.5 -> Medio
-                     // < i + 0.5  -> Vacío (dentro del rango de este corazón 'i')
-                     // Ajustemos la lógica para que sea así:
-                     heartImages[i].sprite = emptyHeart; // Si no llega ni a la mitad, está vacío
-                 }
-            }
-            else // Si la vida es <= i, este corazón y los siguientes están vacíos
-            {
-                heartImages[i].sprite = emptyHeart;
-            }
-        }
-
-        // *** Lógica corregida y más clara para UpdateHealthBarSprites ***
-        for (int i = 0; i < heartImages.Count; i++)
-        {
-            float heartValue = i + 1f; // El valor que representa el final de este corazón (corazón 0 -> 1.0, corazón 1 -> 2.0)
-            float halfPoint = i + 0.5f; // El punto medio de este corazón
-
-            if (currentHealthValue >= heartValue)
-            {
-                heartImages[i].sprite = fullHeart; // Si la vida iguala o supera el valor total de este corazón
-            }
-            else if (currentHealthValue >= halfPoint)
-            {
-                heartImages[i].sprite = halfHeart; // Si la vida iguala o supera el punto medio
+                playerHealth = Player.Instance.GetComponent<PlayerHealth>();
+                if (playerHealth == null)
+                {
+                     Debug.LogError("UIHealthBar: ¡No se encontró el componente PlayerHealth en Player.Instance!", this.gameObject);
+                     enabled = false; return;
+                }
             }
             else
             {
-                heartImages[i].sprite = emptyHeart; // Si no llega ni al punto medio
+                 Debug.LogError("UIHealthBar: ¡No se encontró Player.Instance! Asegúrate de que el jugador exista y use DontDestroyOnLoad.", this.gameObject);
+                 enabled = false; return; // Salir si no hay jugador.
+            }
+        }
+        // Validaciones de configuración.
+        if (heartPrefab == null)
+        {
+            Debug.LogError("UIHealthBar: Heart Prefab no está asignado.", this.gameObject);
+            enabled = false; return;
+        }
+        if (fullHeart == null || halfHeart == null || emptyHeart == null)
+        {
+            Debug.LogError("UIHealthBar: Uno o más sprites de corazón (Full, Half, Empty) no están asignados.", this.gameObject);
+            enabled = false; return;
+        }
+        // Suscribirse a los eventos de PlayerHealth para actualizar la UI dinámicamente.
+        playerHealth.OnHealthChanged.AddListener(UpdateHealthBarSprites);
+        playerHealth.OnMaxHealthChanged.AddListener(SetupHearts);
+        // Configura inicialmente los contenedores de corazón basados en la vida máxima actual del jugador.
+        SetupHearts();
+        // La actualización inicial del llenado de los corazones ocurrirá a través del evento OnHealthChanged
+        // que PlayerHealth invoca en su propio Start(). Si no, se puede llamar aquí:
+        // UpdateHealthBarSprites(playerHealth.CurrentHealth);
+    }
+
+    /// <summary>
+    /// Reconstruye la visualización de los contenedores de corazón en la UI.
+    /// Se llama cuando cambia la vida máxima del jugador (PlayerHealth.OnMaxHealthChanged).
+    /// Limpia los corazones existentes y crea nuevos basados en 'playerHealth.CurrentMaxHearts'.
+    /// </summary>
+    void SetupHearts()
+    {
+        if (playerHealth == null) return; // Seguridad adicional.
+        // Limpia los GameObjects de corazón existentes para evitar duplicados.
+        foreach (Transform child in transform) // 'transform' se refiere al transform de este UIHealthBar (el contenedor).
+        {
+            Destroy(child.gameObject);
+        }
+        heartImages.Clear(); // Limpia la lista de referencias a Images.
+
+        // Obtiene la capacidad máxima actual de contenedores de corazón del jugador.
+        int numberOfHeartContainers = playerHealth.CurrentMaxHearts;
+
+        // Instancia un GameObject de corazón (desde heartPrefab) por cada contenedor de vida máxima.
+        for (int i = 0; i < numberOfHeartContainers; i++)
+        {
+            GameObject heartInstance = Instantiate(heartPrefab, transform); // Instancia como hijo de este objeto.
+            heartInstance.name = "HeartContainer_" + i; // Nombre descriptivo.
+            Image heartImageComponent = heartInstance.GetComponent<Image>();
+
+            if (heartImageComponent != null)
+            {
+                heartImages.Add(heartImageComponent); // Añade a la lista para fácil acceso.
+                // heartImageComponent.sprite = emptyHeart; // Podría empezar vacío, UpdateHealthBarSprites lo corregirá.
+                // heartImageComponent.enabled = true;
+            }
+             else
+            {
+                 Debug.LogError("UIHealthBar: El prefab del corazón ('heartPrefab') no tiene un componente Image!", heartInstance);
             }
         }
 
-
+        // Actualiza inmediatamente los sprites de los corazones para reflejar la vida actual.
+        UpdateHealthBarSprites(playerHealth.CurrentHealth);
     }
 
+    /// <summary>
+    /// Actualiza los sprites de cada contenedor de corazón (lleno, medio o vacío)
+    /// basándose en el valor de la salud actual del jugador.
+    /// Se llama cuando la salud del jugador cambia (PlayerHealth.OnHealthChanged).
+    /// </summary>
+    /// <param name="currentHealthValue">La salud actual del jugador (ej: 2.5f = dos corazones y medio).</param>
+    void UpdateHealthBarSprites(float currentHealthValue)
+    {
+        if (playerHealth == null) return;
+        // Itera sobre cada componente Image de corazón que se ha instanciado.
+        for (int i = 0; i < heartImages.Count; i++)
+        {
+            // El valor que representa este corazón si estuviera completamente lleno.
+            // Corazón 0 (índice i=0) representa hasta 1.0 de vida.
+            // Corazón 1 (índice i=1) representa hasta 2.0 de vida, etc.
+            float heartFullValue = i + 1.0f;
+            // El valor que representa este corazón si estuviera medio lleno.
+            float heartHalfValue = i + 0.5f;
+            if (currentHealthValue >= heartFullValue)
+            {
+                // Si la salud actual es mayor o igual al valor de este corazón lleno, mostrarlo lleno.
+                heartImages[i].sprite = fullHeart;
+            }
+            else if (currentHealthValue >= heartHalfValue)
+            {
+                // Si la salud actual es mayor o igual al valor de medio corazón, mostrarlo medio lleno.
+                heartImages[i].sprite = halfHeart;
+            }
+            else
+            {
+                // Si la salud actual es menor que el valor de medio corazón, mostrarlo vacío.
+                heartImages[i].sprite = emptyHeart;
+            }
+        }
+    }
 
+    /// <summary>
+    /// Se llama cuando el GameObject UIHealthBar es destruido.
+    /// Se desuscribe de los eventos de PlayerHealth para prevenir errores y fugas de memoria.
+    /// </summary>
     private void OnDestroy()
     {
+        // Es importante desuscribirse de los eventos para evitar llamadas a métodos en objetos destruidos.
         if (playerHealth != null)
         {
             playerHealth.OnHealthChanged.RemoveListener(UpdateHealthBarSprites);

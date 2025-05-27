@@ -1,73 +1,75 @@
-// GlobalTimer.cs (MODIFICADO)
 using UnityEngine;
-using TMPro;
-// Ya no necesita UnityEngine.Events si el evento se maneja en GameManager
+using TMPro; // Necesario para TextMeshProUGUI.
 
+/// <summary>
+/// Actualiza un elemento de UI TextMeshPro para mostrar el tiempo de juego
+/// obtenido del GameManager (Singleton).
+/// Este script es un presentador para el tiempo global.
+/// </summary>
 public class GlobalTimer : MonoBehaviour
 {
     [Header("UI")]
-    [Tooltip("Referencia al objeto TextMeshProUGUI para mostrar el tiempo.")]
-    [SerializeField] private TextMeshProUGUI timerText; // Necesita la referencia UI de ESTA escena
+    [Tooltip("Referencia al objeto TextMeshProUGUI en la UI donde se mostrará el tiempo.")]
+    [SerializeField] private TextMeshProUGUI timerText; // Componente UI para el texto del temporizador.
 
-    // Ya no necesita variables de tiempo (startTimeInSeconds, currentTime, timerIsRunning)
-    // Ya no necesita el evento OnTimerEnd
-
+    /// <summary>
+    /// Se llama antes del primer frame de Update.
+    /// Valida la referencia al TextMeshPro y actualiza la pantalla inicialmente.
+    /// </summary>
     void Start()
     {
-        // Validar UI
+        // Valida que el componente de texto esté asignado.
         if (timerText == null)
         {
-            Debug.LogError("¡Referencia a timerText no asignada en GlobalTimer!", this);
-            enabled = false;
+            Debug.LogError("¡Referencia a timerText no asignada en GlobalTimer! El temporizador no se mostrará.", this);
+            enabled = false; // Desactiva el script si falta la referencia crucial.
             return;
         }
-
-        // Intentar iniciar el timer global LA PRIMERA VEZ que se carga una escena con este script
-        // O si el GameManager existe pero el timer no está corriendo (ej. después de resetear)
-        if (GameManager.Instance != null) // Asegurarse que el GameManager ya existe
-        {
-            // Podrías decidir si quieres resetear/iniciar aquí o en otro lado
-            // Ejemplo: Iniciar solo si el tiempo está al máximo (recién reseteado o primera vez)
-            // if (!GameManager.Instance.timerIsRunning && GameManager.Instance.CurrentTime >= GameManager.Instance.GetStartTime()) {
-            //      GameManager.Instance.StartTimer();
-            // }
-            // O simplemente asegúrate de que se inicie en algún punto (quizás al empezar el nivel)
-            // GameManager.Instance.StartTimer(); // Descomenta si quieres que SIEMPRE intente iniciar aquí
-        } else {
-            Debug.LogWarning("GlobalTimer.Start: GameManager.Instance aún no existe.");
+        // Comprueba si GameManager existe. El GameManager es responsable de iniciar su propio temporizador.
+        if (GameManager.Instance == null) {
         }
-
-        // Actualizar la UI inmediatamente con el valor del GameManager (si existe)
+        // Actualiza la UI inmediatamente con el valor actual del GameManager (si existe).
         UpdateDisplay();
-
     }
 
+    /// <summary>
+    /// Se llama una vez por frame.
+    /// Actualiza continuamente la visualización del tiempo en la UI.
+    /// </summary>
     void Update()
     {
-        // Actualizar la UI en cada frame leyendo del GameManager
+        // Actualiza la UI en cada frame leyendo el tiempo del GameManager.
         UpdateDisplay();
     }
 
+    /// <summary>
+    /// Actualiza el componente TextMeshProUGUI con el tiempo actual del GameManager.
+    /// Si GameManager no existe, muestra un placeholder.
+    /// </summary>
     void UpdateDisplay()
     {
-         if (GameManager.Instance != null)
+         if (GameManager.Instance != null) // Obtiene el tiempo del GameManager (Singleton).
          {
              DisplayTime(GameManager.Instance.CurrentTime);
          }
-         else
+         else // Si no hay GameManager, muestra un texto por defecto.
          {
-             timerText.text = "--:--"; // Mostrar si no hay GameManager
+             if(timerText != null) timerText.text = "--:--";
          }
     }
 
-    // DisplayTime sigue igual
+    /// <summary>
+    /// Formatea el tiempo (en segundos) a un formato MM:SS y lo muestra en el TextMeshProUGUI.
+    /// </summary>
+    /// <param name="timeToDisplay">El tiempo en segundos a mostrar.</param>
     void DisplayTime(float timeToDisplay)
     {
+        // Asegura que el tiempo no sea negativo para la visualización.
         if (timeToDisplay < 0) timeToDisplay = 0;
+        // Calcula minutos y segundos.
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        // Actualiza el texto con el formato MM:SS.
+        if(timerText != null) timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-
-    // Ya no necesita StartTimer, PauseTimer, ResetTimer, AddTime, GetCurrentTime
 }

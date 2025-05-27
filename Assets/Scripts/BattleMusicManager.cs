@@ -2,30 +2,47 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic; // Para usar HashSet
 
+/// <summary>
+/// Gestiona la reproducción de la música de batalla.
+/// La música comienza cuando un enemigo la solicita (al detectar al jugador)
+/// y se detiene con un fundido cuando ya no hay enemigos activos solicitándola.
+/// Utiliza un patrón Singleton para acceso global.
+/// </summary>
 public class BattleMusicManager : MonoBehaviour
 {
-    public static BattleMusicManager Instance { get; private set; } // Singleton Instance
-
-    [SerializeField] private AudioSource battleAudioSource; // Asigna el AudioSource en el Inspector
-    [SerializeField] private float fadeDuration = 5.0f; // Duración del fundido para detenerse
-
-    // Un conjunto para llevar la cuenta de los enemigos activos
+    /// <summary>
+    /// Instancia estática Singleton de BattleMusicManager.
+    /// </summary>
+    public static BattleMusicManager Instance { get; private set; }
+    [Tooltip("El componente AudioSource que reproducirá la música de batalla.")]
+    [SerializeField] private AudioSource battleAudioSource;
+    [Tooltip("Duración en segundos del fundido de entrada/salida de la música.")]
+    [SerializeField] private float fadeDuration = 1.0f; // Ajustado a 1.0s como en la versión previa del script.
+    // Un conjunto para llevar la cuenta de los GameObjects enemigos que actualmente
+    // requieren que la música de batalla esté sonando.
     private HashSet<GameObject> activeEnemies = new HashSet<GameObject>();
+    // Referencias a las corutinas de fundido para poder detenerlas si es necesario.
+    private Coroutine fadeOutCoroutine = null;
+    private Coroutine fadeInCoroutine = null;
+    private bool isRoomBattleActive = false;
 
-    private Coroutine fadeOutCoroutine = null; // Para controlar la corutina de fade out
-
+    /// <summary>
+    /// Se llama una vez cuando el script es cargado.
+    /// Implementa la lógica Singleton y configura el AudioSource.
+    /// </summary>
     private void Awake()
     {
-        // --- Configuración Singleton Sencilla ---
+        // Configuración Singleton.
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // Destruye duplicados
+            Destroy(gameObject); // Destruye esta instancia si ya existe otra.
             return;
         }
         Instance = this;
-        // DontDestroyOnLoad(gameObject); // Descomenta si necesitas que persista entre escenas
+        // DontDestroyOnLoad(gameObject); // Descomentar si se necesita que persista entre escenas.
+                                        // En el script original estaba comentado.
 
-        // --- Obtener AudioSource si no está asignado ---
+        // Obtiene el AudioSource si no está asignado en el Inspector.
         if (battleAudioSource == null)
         {
             battleAudioSource = GetComponent<AudioSource>();
@@ -33,99 +50,181 @@ public class BattleMusicManager : MonoBehaviour
         if (battleAudioSource == null)
         {
              Debug.LogError("¡AudioSource no encontrado o asignado en BattleMusicManager!", this);
-             enabled = false; // Desactivar script si no hay audio source
+             enabled = false; // Desactiva el script si no hay AudioSource.
              return;
         }
-        battleAudioSource.volume = 0; // Empezar con volumen 0
-        battleAudioSource.Stop();    // Asegurarse que no esté sonando
+        // Inicia con volumen 0 y detenida, para controlarla con fundidos.
+        battleAudioSource.volume = 0;
+        battleAudioSource.Stop();
     }
 
-    // Llamado por el enemigo cuando empieza a detectar/atacar
+    /// <summary>
+    /// Llamado por un enemigo cuando comienza a detectar o atacar al jugador,
+    /// solicitando que la música de batalla comience o continúe.
+    /// </summary>
+    /// <param name="enemy">El GameObject del enemigo que solicita la música.</param>
     public void RequestBattleMusic(GameObject enemy)
     {
-        if (enemy == null || !activeEnemies.Add(enemy)) // Intenta añadir, si ya estaba, no hagas nada
+        // Si el enemigo es nulo o ya está en el conjunto de enemigos activos, no hacer nada.
+        if (enemy == null || !activeEnemies.Add(enemy))
         {
-             return; // Ya estaba registrado o es nulo
+             return;
         }
-
-        Debug.Log($"Enemy {enemy.name} requesting battle music. Active count: {activeEnemies.Count}");
-
-        // Si este es el PRIMER enemigo activo y la música no está sonando/fading in
-        if (activeEnemies.Count == 1 && (fadeOutCoroutine != null || !battleAudioSource.isPlaying))
+        // Si no hay una batalla de sala forzando la música y este es el primer enemigo en solicitarla,
+        // o si la música estaba en proceso de fundido de salida, iniciar música con fundido de entrada.
+        if (!isRoomBattleActive && activeEnemies.Count == 1)
         {
-            Debug.Log("Starting Battle Music...");
-            // Detener cualquier fade out que estuviera en progreso
-            if (fadeOutCoroutine != null)
-            {
-                StopCoroutine(fadeOutCoroutine);
-                fadeOutCoroutine = null;
-            }
-            // Iniciar fade in (o simplemente play si no quieres fade in)
-            // Aquí podrías llamar a una corutina StartCoroutine(FadeIn(fadeDuration));
-            // O simplemente empezar a sonar:
-            battleAudioSource.volume = 1f; // O el volumen máximo deseado
-            battleAudioSource.Play();
+            PlayBattleMusicWithFadeIn();
         }
     }
 
-    // Llamado por el enemigo cuando deja de detectar, muere, o el jugador muere
+    /// <summary>
+    /// Llamado por un enemigo cuando deja de detectar al jugador, muere, o es desactivado.
+    /// Libera la solicitud de música de batalla por parte de ese enemigo.
+    /// </summary>
+    /// <param name="enemy">El GameObject del enemigo que libera la música.</param>
     public void ReleaseBattleMusic(GameObject enemy)
     {
-        if (enemy == null || !activeEnemies.Remove(enemy)) // Intenta quitar, si no estaba, no hagas nada
+        // Si el enemigo es nulo o no estaba en el conjunto de enemigos activos, no hacer nada.
+        if (enemy == null || !activeEnemies.Remove(enemy))
         {
-            return; // No estaba registrado o es nulo
+            return;
         }
-
-        Debug.Log($"Enemy {enemy.name} releasing battle music. Active count: {activeEnemies.Count}");
-
-        CheckStopCondition();
+        // Solo comprobar si se debe detener la música si no hay una batalla de sala activa.
+        if (!isRoomBattleActive)
+        {
+            CheckStopCondition();
+        }
     }
 
-    // Llamado por el jugador cuando muere
+    /// <summary>
+    /// Llamado por RoomController para indicar que una "batalla de sala" ha comenzado.
+    /// Fuerza el inicio de la música de batalla.
+    /// </summary>
+    public void RoomEntered()
+    {
+        isRoomBattleActive = true;
+        PlayBattleMusicWithFadeIn();
+    }
+
+    /// <summary>
+    /// Llamado por RoomController para indicar que una "batalla de sala" ha terminado (todos los enemigos derrotados).
+    /// Permite que la música se detenga si no hay otras solicitudes.
+    /// </summary>
+    public void RoomCleared()
+    {
+        isRoomBattleActive = false;
+        // Comprueba si la música debe detenerse (si no hay más enemigos individuales activos).
+        CheckStopCondition();
+    }
+    // --- Fin Métodos para RoomController ---
+
+    /// <summary>
+    /// Llamado externamente (por PlayerHealth o Player) cuando el jugador muere.
+    /// Detiene la música de batalla.
+    /// </summary>
     public void PlayerDied()
     {
-        Debug.Log("Player died, stopping battle music.");
-        activeEnemies.Clear(); // Limpiar todos los enemigos activos
-        CheckStopCondition();
+        isRoomBattleActive = false; // La batalla de sala termina.
+        activeEnemies.Clear(); // Limpia todas las solicitudes de enemigos.
+        CheckStopCondition(); // Intenta detener la música.
     }
 
-    // Comprueba si la música debe detenerse
+    /// <summary>
+    /// Inicia la reproducción de la música de batalla con un efecto de fundido de entrada.
+    /// Detiene cualquier fundido de salida que pudiera estar en progreso.
+    /// </summary>
+    private void PlayBattleMusicWithFadeIn()
+    {
+        // Si hay un fundido de salida en progreso, detenerlo.
+        if (fadeOutCoroutine != null)
+        {
+            StopCoroutine(fadeOutCoroutine);
+            fadeOutCoroutine = null;
+        }
+        // Si ya hay un fundido de entrada o la música ya suena a volumen máximo, no hacer nada.
+        if (fadeInCoroutine != null || (battleAudioSource.isPlaying && Mathf.Approximately(battleAudioSource.volume, 1f)))
+        {
+            return;
+        }
+        // Inicia la corutina de fundido de entrada.
+        fadeInCoroutine = StartCoroutine(FadeIn(fadeDuration));
+    }
+
+    /// <summary>
+    /// Comprueba si se cumplen las condiciones para detener la música de batalla
+    /// (ningún enemigo activo Y ninguna batalla de sala activa).
+    /// Si se cumplen, inicia el fundido de salida.
+    /// </summary>
     private void CheckStopCondition()
     {
-         // Si ya NO quedan enemigos activos y la música está sonando
-        if (activeEnemies.Count == 0 && battleAudioSource.isPlaying && fadeOutCoroutine == null)
+        // Si no hay enemigos activos, ni una batalla de sala forzando la música,
+        // la música está sonando y no hay ya un fundido de salida en progreso...
+        if (activeEnemies.Count == 0 && !isRoomBattleActive && battleAudioSource.isPlaying && fadeOutCoroutine == null)
         {
-            Debug.Log("Last enemy released. Starting fade out...");
+            // Detener cualquier fundido de entrada que pudiera estar en progreso.
+            if (fadeInCoroutine != null)
+            {
+                StopCoroutine(fadeInCoroutine);
+                fadeInCoroutine = null;
+            }
+            // Inicia la corutina de fundido de salida.
             fadeOutCoroutine = StartCoroutine(FadeOutAndStop(fadeDuration));
         }
     }
 
-    // Corutina para bajar el volumen gradualmente y detener
-    private IEnumerator FadeOutAndStop(float duration)
+    /// <summary>
+    /// Corutina para aumentar gradualmente el volumen de la música de batalla hasta el máximo.
+    /// </summary>
+    /// <param name="duration">Duración del fundido de entrada en segundos.</param>
+    private IEnumerator FadeIn(float duration)
     {
-        float startVolume = battleAudioSource.volume;
+        // Si la música no está sonando, la inicia desde volumen 0.
+        if (!battleAudioSource.isPlaying)
+        {
+            battleAudioSource.volume = 0f;
+            battleAudioSource.Play();
+        }
+        float startVolume = battleAudioSource.volume; // Volumen actual desde el que empezar el fundido.
         float timer = 0f;
-
+        // Bucle hasta que se complete la duración del fundido.
         while (timer < duration)
         {
-            // Calcular nuevo volumen
-            battleAudioSource.volume = Mathf.Lerp(startVolume, 0f, timer / duration);
-            timer += Time.deltaTime;
-            yield return null; // Esperar al siguiente frame
+            battleAudioSource.volume = Mathf.Lerp(startVolume, 1f, timer / duration); // Interpola el volumen.
+            timer += Time.deltaTime; // Avanza el temporizador.
+            yield return null; // Espera al siguiente frame.
         }
-
-        // Asegurar volumen 0 y detener
-        battleAudioSource.volume = 0f;
-        battleAudioSource.Stop();
-        Debug.Log("Battle Music Stopped after fade out.");
-        fadeOutCoroutine = null; // Marcar corutina como terminada
+        battleAudioSource.volume = 1f; // Asegura que el volumen sea exactamente 1 al final.
+        fadeInCoroutine = null; // Limpia la referencia a la corutina.
     }
 
-     // Opcional: Corutina para subir el volumen gradualmente
-    // private IEnumerator FadeIn(float duration) { ... }
+    /// <summary>
+    /// Corutina para disminuir gradualmente el volumen de la música de batalla y detenerla.
+    /// </summary>
+    /// <param name="duration">Duración del fundido de salida en segundos.</param>
+    private IEnumerator FadeOutAndStop(float duration)
+    {
+        float startVolume = battleAudioSource.volume; // Volumen actual desde el que empezar el fundido.
+        float timer = 0f;
+        // Bucle hasta que se complete la duración del fundido.
+        while (timer < duration)
+        {
+            battleAudioSource.volume = Mathf.Lerp(startVolume, 0f, timer / duration); // Interpola el volumen.
+            timer += Time.deltaTime; // Avanza el temporizador.
+            yield return null; // Espera al siguiente frame.
+        }
 
-    // Asegúrate de liberar enemigos si se destruyen inesperadamente
+        battleAudioSource.volume = 0f; // Asegura que el volumen sea exactamente 0.
+        battleAudioSource.Stop();      // Detiene la reproducción.
+        fadeOutCoroutine = null; // Limpia la referencia a la corutina.
+    }
+
+    /// <summary>
+    /// Se llama cuando el GameObject es destruido.
+    /// Limpia la instancia Singleton si esta era la instancia.
+    /// </summary>
     private void OnDestroy() {
+        // Si esta es la instancia Singleton, la limpia para permitir una nueva si el objeto se recrea.
         if (Instance == this) {
             Instance = null;
         }

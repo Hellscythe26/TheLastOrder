@@ -232,6 +232,7 @@ MonoBehaviour:
   rb: {fileID: 4926566052448819941}
   health: {fileID: 7265673599311566633}
   animator: {fileID: 8449168453349576667}
+  combatSystem: {fileID: 0}
 --- !u!114 &7607898497107223131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 1
-  attackRange: 1.5
+  attackRange: 1.29
   attackCooldown: 2
   health: {fileID: 7265673599311566633}
   animator: {fileID: 0}

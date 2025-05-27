@@ -1,29 +1,35 @@
-// Agents.cs
-using UnityEngine; // Necesario si usas tipos de Unity como Vector2, o para Debug
+using UnityEngine; // Para Debug si se añadiera en el futuro.
 
-public class Agents // Anteriormente EnemyAgentActions
+/// <summary>
+/// Define la lógica de decisión para un agente.
+/// Recibe observaciones del entorno y, basándose en una política interna,
+/// decide la acción a tomar. Este es un modelo de simulación basado en agentes.
+/// </summary>
+public class Agents
 {
-    // Definición de posibles acciones que el agente puede decidir tomar
+    /// <summary>
+    /// Define las posibles acciones generales que un agente puede decidir realizar.
+    /// </summary>
     public enum Action
     {
-        Idle_Or_RandomWalk, // Quedarse quieto o caminar aleatoriamente
-        ChasePlayer,        // Perseguir al jugador
-        AttackPlayer        // Atacar al jugador
+        Idle_Or_RandomWalk, // Acción de estar inactivo o realizar una caminata aleatoria.
+        ChasePlayer,        // Acción de perseguir al jugador.
+        AttackPlayer        // Acción de atacar al jugador.
     }
-
-    // Estado del agente/observaciones
-    private bool isPlayerDetected;
-    private bool isPlayerInAttackRange;
-    private bool isAttackOffCooldown;
-    private bool canAgentPerformActions; // Si el agente (enemigo) está en condiciones de actuar
+    // Variables internas para almacenar el estado observado del entorno del agente.
+    private bool isPlayerDetected;      // True si el jugador ha sido detectado en un radio mayor.
+    private bool isPlayerInAttackRange; // True si el jugador está dentro del rango de ataque.
+    private bool isAttackOffCooldown;   // True si la habilidad de ataque del agente no está en cooldown.
+    private bool canAgentPerformActions;// True si el agente está en condiciones de realizar acciones (está vivo).
 
     /// <summary>
-    /// Actualiza las observaciones del agente sobre su entorno y estado.
+    /// Actualiza las observaciones del agente con la información más reciente del entorno y su propio estado.
+    /// Llamado externamente antes de pedir una decisión.
     /// </summary>
-    /// <param name="detected">True si el jugador está detectado en el radio mayor.</param>
-    /// <param name="inRangeToAttack">True si el jugador está dentro del rango de ataque.</param>
-    /// <param name="attackReady">True si el cooldown de ataque ha terminado.</param>
-    /// <param name="canAct">True si el agente (enemigo) está vivo y puede realizar acciones.</param>
+    /// <param name="detected">True si el jugador está actualmente detectado.</param>
+    /// <param name="inRangeToAttack">True si el jugador está actualmente dentro del rango de ataque.</param>
+    /// <param name="attackReady">True si la capacidad de ataque del agente está lista (fuera de cooldown).</param>
+    /// <param name="canAct">True si el agente está en condiciones generales de actuar (ej. vivo, no aturdido).</param>
     public void UpdateObservations(bool detected, bool inRangeToAttack, bool attackReady, bool canAct)
     {
         isPlayerDetected = detected;
@@ -33,36 +39,35 @@ public class Agents // Anteriormente EnemyAgentActions
     }
 
     /// <summary>
-    /// Define la política del agente y decide la siguiente acción
-    /// basada en las observaciones actuales.
+    /// Determina la siguiente acción a tomar por el agente basándose en las observaciones actuales.
+    /// Esta función implementa la "política" de decisión del agente.
     /// </summary>
-    /// <returns>La acción decidida por el agente.</returns>
+    /// <returns>La enumeración 'Action' que representa la acción decidida.</returns>
     public Action DecideNextAction()
     {
+        // Si el agente no puede realizar acciones (está muerto), retorna una acción base.
         if (!canAgentPerformActions)
         {
-            // Si el agente no puede actuar (ej. está muerto o incapacitado),
-            // por defecto no hace nada o vuelve a un estado base.
             return Action.Idle_Or_RandomWalk;
         }
-
-        // Política de decisión:
-        if (isPlayerDetected)
+        // Implementación de la política de decisión:
+        if (isPlayerDetected) // Si el jugador ha sido detectado...
         {
+            // ...y está en rango de ataque, y el ataque está listo...
             if (isPlayerInAttackRange && isAttackOffCooldown)
             {
-                // Prioridad 1: Atacar si el jugador está detectado, en rango, y el ataque está listo.
+                // ...entonces la acción prioritaria es atacar.
                 return Action.AttackPlayer;
             }
             else
             {
-                // Prioridad 2: Perseguir si el jugador está detectado pero no se cumplen las condiciones para atacar.
+                // ...si está detectado pero no puede atacar (fuera de rango o en cooldown), entonces persigue.
                 return Action.ChasePlayer;
             }
         }
-        else
+        else // Si el jugador no está detectado...
         {
-            // Prioridad 3: Si el jugador no está detectado, realizar caminata aleatoria o estar inactivo.
+            // ...entonces el agente realiza su comportamiento por defecto (caminata aleatoria o idle).
             return Action.Idle_Or_RandomWalk;
         }
     }
