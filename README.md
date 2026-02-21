@@ -21,10 +21,10 @@ Aplicado al clima y ciclos de eventos. El estado actual del mundo (ej. "Soleado"
 Implementado en la logística de salas trampa. Los NPCs forman filas y gestionan tiempos de espera para interactuar con el jugador, evitando aglomeraciones caóticas.
 
 ## Tecnologías Utilizadas
-Engine: Unity 2022.x / 2023.x
-Lenguaje: C#
-Control de Versiones: Git
-Matemáticas: Implementaciones personalizadas de RNG y matrices de transición para Markov.
+* Engine: Unity 2022.x / 2023.x
+* Lenguaje: C#
+* Control de Versiones: Git
+* Matemáticas: Implementaciones personalizadas de RNG y matrices de transición para Markov.
 
 ## Clonar el repositorio:
    ```bash
